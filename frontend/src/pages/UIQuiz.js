@@ -190,14 +190,8 @@ const UIQuiz = () => {
     return () => clearInterval(timer);
   }, [counter]);
 
-  useEffect(() => {
-    if (selectedTopic === "HTML") {
-      return;
-    }
-  });
-
   const [score, setScore] = useState(0);
-  const [point, setPoint] = useState(100);
+  const [point, setPoint] = useState(0);
   const [currentindex, setCurrentIndex] = useState(0);
   const [quizfinished, setQuizFinished] = useState(false);
   const [submit, setSubmit] = useState(false);
@@ -207,13 +201,17 @@ const UIQuiz = () => {
     const a = questions[currentindex].answerOptions.find(
       (q) => q.answerText === pilihanjawaban
     );
+    console.log(a);
 
     if (a.isCorrect) {
       setScore((value) => value + 1);
+
       setPoint((p) => p + 100);
     }
-
     setSubmit(true);
+    // if (!submit) {
+    //   setCounter(15);
+    // }
   };
 
   const handlePilihJawaban = (answerText) => {
@@ -247,7 +245,7 @@ const UIQuiz = () => {
     <>
       <p>{counter}</p>
       <div class="mb-5 h-2 rounded-full bg-gray-200">
-        <div class="h-2 rounded-full bg-orange-500" style="width: 50%"></div>
+        {/* <div class="h-2 rounded-full bg-orange-500" style="width: 50%"></div> */}
       </div>
       <p>t</p>
       <div className="z-30">
@@ -289,6 +287,7 @@ const UIQuiz = () => {
                 Basic HTML
               </h2>
               <p>{score}</p>
+              <p>{point}</p>
             </div>
             <div className="py-8 px-4">
               <div className="pb-2">

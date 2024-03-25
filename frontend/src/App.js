@@ -24,24 +24,24 @@ import Profile from "./pages/Profile.js";
 
 function App() {
   return (
-    // <div>
-    //   {/* <Landingpage /> */}
-    //   {/* <Navbar /> */}
-    //   {/* <Leaderboard /> */}
-    //   {/* <Loginpage />
-    //   {/* <NavbarMain
-    //   <Footer /> */}
-    //   {/* <Topic /> */}
-    //   {/* <Signup /> */}
-    //   {/* <Quiz /> */}
-    //   {/* <Topic /> */}
-    //   {/* <PlayQuiz /> */}
-    <PlayQuizMain />
-    // <Profile />
-    //   {/* <NavbarMain /> */}
-    //   {/* <Loginpage /> */}
-    //   {/* <Signup /> */}
-    // </div>
+    <div>
+      {/* <Landingpage /> */}
+      {/* <Navbar /> */}
+      {/* <Leaderboard /> */}
+      {/* <Loginpage />
+      {/* <NavbarMain
+      <Footer /> */}
+      {/* <Topic /> */}
+      {/* <Signup /> */}
+      {/* <Quiz /> */}
+      {/* <Topic /> */}
+      {/* <PlayQuiz /> */}
+      <PlayQuizMain />
+      {/* <Profile /> */}
+      {/* <NavbarMain /> */}
+      {/* <Loginpage /> */}
+      {/* <Signup /> */}
+    </div>
 
     // <>
     //   <Navbar />

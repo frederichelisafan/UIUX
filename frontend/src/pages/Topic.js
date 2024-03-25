@@ -17,9 +17,9 @@ const Topic = () => {
   };
 
   const renderSingleQuiz = () => {
-    if (selectedTopic === "HTML") {
+    if (selectedTopic === "UI") {
       return <UIQuiz />;
-    } else if (selectedTopic === "CSS") {
+    } else if (selectedTopic === "UX") {
       return <UxQuiz />;
     }
 

@@ -3,8 +3,8 @@ const Expert = () => {
     <>
       <div className="mx-auto">
         <div className="flex flex-wrap -mx-4">
-          <div className="w-full px-4">
-            <div className="mx-auto mb-[60px] max-w-[600px] text-center">
+          <div className="w-full">
+            <div className="mx-auto mb-[60px] max-w-[600px] text-center py-0">
               <h2 className="text-[#443091] mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px] relative">
                 <span>Perkenalkan pakar UI/UX</span>
                 <svg

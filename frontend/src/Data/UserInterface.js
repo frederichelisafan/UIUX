@@ -1578,3 +1578,195 @@ const ClearFunctionalityquestions = [
     ],
   },
 ];
+
+const Consistencyquestions = [
+  {
+    questionText: "Apa yang dimaksud dengan prinsip desain konsistensi?",
+    answerOptions: [
+      {
+        answerText:
+          "Membuat setiap halaman dalam produk terlihat berbeda-beda.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Menjaga elemen-elemen desain agar seragam di seluruh produk.",
+        isCorrect: true,
+      },
+      {
+        answerText: "Menggunakan font yang berbeda untuk setiap teks.",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    questionText: "Apa manfaat utama dari prinsip desain konsistensi?",
+    answerOptions: [
+      {
+        answerText: "Membuat pengguna terus menerus memperhatikan desain.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Untuk memastikan pengguna dapat dengan mudah menggunakan fitur-fitur aplikasi",
+        isCorrect: true,
+      },
+      {
+        answerText:
+          "Membuat produk terlihat berbeda-beda untuk menarik perhatian.",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    questionText: "Salah satu contoh prinsip desain konsistensi adalah:",
+    answerOptions: [
+      {
+        answerText:
+          "Mengubah warna latar belakang situs web setiap kali pengguna memuatnya.",
+        isCorrect: false,
+      },
+      {
+        answerText: "Menyediakan navigasi yang berubah-ubah di setiap halaman.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Menggunakan ikon yang sama untuk tindakan yang serupa di berbagai bagian produk.",
+        isCorrect: true,
+      },
+    ],
+  },
+  {
+    questionText: "Mengapa konsistensi dalam desain UI penting?",
+    answerOptions: [
+      {
+        answerText: "Konsistensi meningkatkan kompleksitas penggunaan produk.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Konsistensi tidak memiliki dampak pada pengalaman pengguna.",
+        isCorrect: false,
+      },
+      {
+        answerText: "Konsistensi membantu pengguna merasa nyaman dan terbiasa.",
+        isCorrect: true,
+      },
+    ],
+  },
+  {
+    questionText:
+      "Apa dampak dari desain yang tidak konsisten pada pengalaman pengguna?",
+    answerOptions: [
+      {
+        answerText: "Pengguna merasa lebih mudah beradaptasi dengan produk.",
+        isCorrect: false,
+      },
+      {
+        answerText: "Pengguna akan menemukan produk lebih menarik.",
+        isCorrect: false,
+      },
+      {
+        answerText: "Pengguna mungkin merasa bingung dan kesulitan menavigasi.",
+        isCorrect: true,
+      },
+    ],
+  },
+  {
+    questionText:
+      "Bagaimana desain konsistensi memengaruhi citra merek suatu produk?",
+    answerOptions: [
+      {
+        answerText: "Desain konsistensi membuat produk terlihat membosankan.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Desain konsistensi tidak memiliki pengaruh pada citra merek.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Desain konsistensi memperkuat citra merek dan kepercayaan pengguna.",
+        isCorrect: true,
+      },
+    ],
+  },
+  {
+    questionText:
+      "Bagaimana konsistensi dapat memengaruhi keberhasilan sebuah produk?",
+    answerOptions: [
+      {
+        answerText:
+          "Konsistensi dapat meningkatkan kepuasan pengguna dan efisiensi penggunaan produk.",
+        isCorrect: true,
+      },
+      {
+        answerText:
+          "Konsistensi tidak memiliki dampak pada keberhasilan produk.",
+        isCorrect: false,
+      },
+      {
+        answerText: "Konsistensi membuat produk terlihat kurang profesional.",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    questionText: "Apa yang terjadi jika desain tidak konsisten?",
+    answerOptions: [
+      {
+        answerText: "Pengguna akan lebih mudah beradaptasi dengan perubahan.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Pengguna mungkin merasa kesulitan memahami dan menggunakan produk.",
+        isCorrect: true,
+      },
+      {
+        answerText: "Produk akan lebih menarik bagi pengguna.",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    questionText: "Bagaimana pentingnya konsistensi dalam desain UI?",
+    answerOptions: [
+      {
+        answerText: "Konsistensi membingungkan pengguna.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Konsistensi membuat pengguna merasa nyaman dan dapat memprediksi interaksi.",
+        isCorrect: true,
+      },
+      {
+        answerText:
+          "Konsistensi tidak memiliki dampak pada pengalaman pengguna.",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    questionText:
+      "Apa keuntungan menggunakan prinsip desain konsistensi dalam pengembangan produk?",
+    answerOptions: [
+      {
+        answerText: "Meningkatkan kompleksitas penggunaan produk.",
+        isCorrect: false,
+      },
+      {
+        answerText: "Mengurangi kesan profesional produk.",
+        isCorrect: false,
+      },
+      {
+        answerText:
+          "Membantu pengguna merasa nyaman dan terbiasa dengan interaksi produk.",
+        isCorrect: true,
+      },
+    ],
+  },
+];

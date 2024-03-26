@@ -36,8 +36,8 @@ function App() {
       {/* <Quiz /> */}
       {/* <Topic /> */}
       {/* <PlayQuiz /> */}
-      <PlayQuizMain />
-      {/* <Profile /> */}
+      {/* <PlayQuizMain /> */}
+      <Profile />
       {/* <NavbarMain /> */}
       {/* <Loginpage /> */}
       {/* <Signup /> */}

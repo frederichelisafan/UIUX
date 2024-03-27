@@ -18,11 +18,12 @@ const NavbarMain = () => {
           </ul>
         </div>
       </nav>
+
       <p className="font-raleway text-4xl mt-14 font-bold text-[#523889] text-center">
         <span className="text-[#B50097]">Ilmu adalah Kunci,</span> Ayo Mulai
         Petualanganmu!
       </p>
-      <div className="grid grid-cols-4 gap-0">
+      <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-0">
         <div class="e-card playing">
           <div class="image"></div>
 

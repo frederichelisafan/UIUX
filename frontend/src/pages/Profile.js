@@ -1,38 +1,39 @@
+import { useState } from "react";
+
 const Profile = () => {
+  const [badge, setBadge] = useState("");
+
   return (
     <>
-      <section class="mb-2 border bg-neutral-100 p-4 rounded-lg max-w-full mx-auto">
-        <div class="mx-auto">
-          <div class="card md:flex max-w-lg">
-            <div class="w-20 h-20 mx-auto mb-6 md:mr-6 flex-shrink-0">
-              <img
-                class="object-cover rounded-full"
-                src="https://tailwindflex.com/public/images/user.png"
-                alt="jj"
-              />
-            </div>
-            <div class="flex-grow text-center md:text-left">
-              <p class="font-bold">Senior Developer</p>
-              <h3 class="text-xl heading">John Doe</h3>
-              <p class="mt-2 mb-3">
-                John is a Senior Developer, mainly works in backend
-                technologies.
-              </p>
-              <div>
-                <span class="bg-gray-200 border px-3 py-1.5 rounded-lg text-sm">
-                  Discrete Math
-                </span>
-                <span class="bg-gray-200 border px-3 py-1.5 rounded-lg text-sm">
-                  Topology
-                </span>
-                <span class="bg-gray-200 border px-3 py-1.5 rounded-lg text-sm">
-                  Neural Nets
-                </span>
-              </div>
-            </div>
+      <div className="p-6 sm:p-12 dark:text-gray-800 mx-40 hero-bg rounded-xl mt-32">
+        <div className="flex space-y-4 md:space-y-0 md:space-x-6 md:flex-row justify-center">
+          <img
+            src="https://source.unsplash.com/75x75/?portrait"
+            alt=""
+            className="self-center flex-shrink-0 w-32 h-32 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300"
+          />
+          <div className="flex flex-col">
+            <h4 className="text-lg font-bold text-left mb-0" id="profile-name">
+              Frederich Elisafan
+            </h4>
+            <p className="text-[#818181] text-xs">
+              frederich.elisafan@gmail.com
+            </p>
+            <p className="text-lg font-semibold mb-0">Statistik</p>
+            <p className="dark:text-gray-600">Total Points: 1000</p>
           </div>
         </div>
-      </section>
+
+        {/* Achievement badge */}
+        <div className="text-center mt-10">
+          <p className="text-xl">Achievement Badge</p>
+          {badge ? (
+            <p>Image badge</p>
+          ) : (
+            <p className="text-purple-500 font-bold">Not Available</p>
+          )}
+        </div>
+      </div>
     </>
   );
 };

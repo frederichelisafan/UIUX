@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import HtmlQuiz from "./UIQuiz";
+import UIQuiz from "./UIQuiz";
 import UxQuiz from "./UXQuiz";
 import { QuizContext } from "../helpers/Context";
 
@@ -17,9 +17,9 @@ const Topic = () => {
   };
 
   const renderSingleQuiz = () => {
-    if (selectedTopic === "HTML") {
-      return <HtmlQuiz />;
-    } else if (selectedTopic === "CSS") {
+    if (selectedTopic === "UI") {
+      return <UIQuiz />;
+    } else if (selectedTopic === "UX") {
       return <UxQuiz />;
     }
 
@@ -30,20 +30,32 @@ const Topic = () => {
     {
       id: 0,
 
-      title: "Basic HTML",
-      topic: "HTML",
+      title: "User Interface",
+      topic: "UI",
     },
     {
       id: 1,
 
-      title: "Basic CSS",
-      topic: "CSS",
+      title: "User Experience",
+      topic: "UX",
     },
     {
       id: 2,
 
-      title: "Basic JavaScript",
-      topic: "JS",
+      title: "Riset Pengguna",
+      topic: "UX Research",
+    },
+    {
+      id: 3,
+
+      title: "Visual Design",
+      topic: "Desain Visual",
+    },
+    {
+      id: 4,
+
+      title: "UI/UX Design Principles.",
+      topic: "Prinsip Design UI/UX",
     },
   ];
 
@@ -55,16 +67,18 @@ const Topic = () => {
         <div>
           {topiclist.map((item) => {
             return (
-              <div className="text-center">
-                <p>{item.title}</p>
-                <button
-                  className="mx-auto"
-                  onClick={() => {
-                    handleTopic(item.topic);
-                  }}
-                >
-                  belajar
-                </button>
+              <div className="grid grid-cols-4 gap-0" key={item.id}>
+                <div className="container">
+                  <p>{item.title}</p>
+                  <button
+                    className=""
+                    onClick={() => {
+                      handleTopic(item.topic);
+                    }}
+                  >
+                    Start Quiz!
+                  </button>
+                </div>
               </div>
             );
           })}

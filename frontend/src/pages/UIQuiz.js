@@ -5,7 +5,6 @@ import checked from "../assets/checked.png";
 // import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-import badge1 from "../assets/badge/image 8.png";
 import GameOver from "../component/GameOver";
 import { QuizContext } from "../helpers/Context";
 import { Progress } from "@material-tailwind/react";
@@ -15,10 +14,26 @@ const UIQuiz = () => {
     {
       questionText: "Apa yang dimaksud dengan ui",
       answerOptions: [
-        { answerText: "Unified Interaction", isCorrect: false },
-        { answerText: "User Interface", isCorrect: true },
-        { answerText: "Universal Integration", isCorrect: false },
-        { answerText: "User Interaction", isCorrect: false },
+        {
+          answerText:
+            "Antarmuka Pengguna adalah perangkat keras yang digunakan untuk berinteraksi dengan komputer.",
+          isCorrect: false,
+        },
+        {
+          answerText:
+            "UI adalah bagian dari sistem komputer yang mengatur komunikasi antara pengguna dan perangkat keras.",
+          isCorrect: false,
+        },
+        {
+          answerText:
+            "UI adalah segala sesuatu yang memungkinkan pengguna berinteraksi dengan sebuah program komputer.",
+          isCorrect: true,
+        },
+        {
+          answerText:
+            "UI merujuk pada desain grafis yang diterapkan dalam pembuatan situs web.",
+          isCorrect: false,
+        },
       ],
     },
     {
@@ -35,39 +50,49 @@ const UIQuiz = () => {
       ],
     },
     {
-      questionText: "Apa yang dimaksud dengan Wireframe dalam UI design?",
+      questionText: "Apa fungsi dari komponen UI Navigation Bar?",
       answerOptions: [
         {
-          answerText: "Sebuah kerangka kerja untuk aplikasi web",
-          isCorrect: true,
+          answerText: "Menampilkan daftar item dalam bentuk kartu.",
+          isCorrect: false,
+        },
+        {
+          answerText: "Mengumpulkan input dari pengguna dalam bentuk formulir.",
+          isCorrect: false,
         },
         {
           answerText:
-            "Representasi visual sederhana dari layout halaman atau antarmuka pengguna",
+            "Menampilkan ikon atau gambar kecil yang mewakili fungsi tertentu.",
+          isCorrect: false,
+        },
+        {
+          answerText:
+            "Memberikan navigasi antara berbagai halaman atau bagian dalam aplikasi atau situs web.",
           isCorrect: true,
         },
-        { answerText: "Alat untuk memprogram UI", isCorrect: false },
-        { answerText: "Proses pengujian UI", isCorrect: false },
       ],
     },
     {
-      questionText: "Apa yang dimaksud dengan Accessibility dalam UI?",
+      questionText: "Apa itu tata letak (layout) dalam desain UI?",
       answerOptions: [
         {
-          answerText: "Kemudahan penggunaan sebuah aplikasi",
-          isCorrect: false,
-        },
-        {
-          answerText: "Kemampuan sebuah sistem untuk diakses secara online",
+          answerText:
+            "Tata letak merujuk pada warna dan tipografi yang digunakan dalam desain UI.",
           isCorrect: false,
         },
         {
           answerText:
-            "Kesesuaian sebuah produk dengan standar aksesibilitas untuk pengguna dengan disabilitas",
+            "Tata letak adalah metode untuk mengatur komponen-komponen UI dalam sebuah halaman atau antarmuka.",
           isCorrect: true,
         },
         {
-          answerText: "Kemampuan mengakses UI dari berbagai perangkat",
+          answerText:
+            "Tata letak merujuk pada animasi yang digunakan untuk meningkatkan interaksi pengguna.",
+          isCorrect: false,
+        },
+        {
+          answerText:
+            "Tata letak adalah teknik untuk menguji responsivitas dari sebuah desain UI.",
           isCorrect: false,
         },
       ],
@@ -95,19 +120,28 @@ const UIQuiz = () => {
       ],
     },
     {
-      questionText: "Apa yang dimaksud dengan UI Patterns",
+      questionText:
+        "Manakah dari berikut yang merupakan prinsip yang penting dalam penggunaan tipografi dalam desain UI?",
       answerOptions: [
         {
-          answerText: "Pola yang digunakan dalam memprogram UI",
+          answerText: "Pemilihan warna yang cerah dan mencolok.",
           isCorrect: false,
         },
         {
           answerText:
-            "Model desain yang sering digunakan untuk menyelesaikan masalah desain UI yang umum",
+            "Penggunaan berbagai jenis huruf untuk menambah keunikan.",
+          isCorrect: false,
+        },
+        {
+          answerText:
+            "Menjaga konsistensi dalam ukuran, spasi, dan konsistensi huruf.",
           isCorrect: true,
         },
-        { answerText: "Panduan desain UI", isCorrect: false },
-        { answerText: "Teknik untuk menguji UI", isCorrect: false },
+        {
+          answerText:
+            "Menggunakan tipografi yang sangat kecil agar teks terlihat rapi.",
+          isCorrect: false,
+        },
       ],
     },
     {
@@ -125,15 +159,28 @@ const UIQuiz = () => {
       ],
     },
     {
-      questionText: "Apa yang dimaksud dengan UI Elements?",
+      questionText:
+        "Manakah dari berikut yang merupakan prinsip desain yang mendukung desain UI yang ramah pengguna?",
       answerOptions: [
-        { answerText: "Bagian-bagian dari kode sumber UI", isCorrect: false },
         {
-          answerText: "Elemen visual yang membentuk antarmuka pengguna",
+          answerText:
+            "Memperkenalkan banyak gangguan visual untuk menarik perhatian pengguna.",
+          isCorrect: false,
+        },
+        {
+          answerText: "Menyediakan navigasi yang rumit dan sulit dipahami.",
+          isCorrect: false,
+        },
+        {
+          answerText:
+            "Menyediakan umpan balik yang jelas dan memudahkan navigasi.",
           isCorrect: true,
         },
-        { answerText: "Alat untuk menguji UI", isCorrect: false },
-        { answerText: "Komponen penyimpanan data", isCorrect: false },
+        {
+          answerText:
+            "Mengabaikan kebutuhan pengguna dan fokus pada kepentingan pengembang.",
+          isCorrect: false,
+        },
       ],
     },
     {
@@ -190,14 +237,8 @@ const UIQuiz = () => {
     return () => clearInterval(timer);
   }, [counter]);
 
-  useEffect(() => {
-    if (selectedTopic === "HTML") {
-      return;
-    }
-  });
-
   const [score, setScore] = useState(0);
-  const [point, setPoint] = useState(100);
+  const [point, setPoint] = useState(0);
   const [currentindex, setCurrentIndex] = useState(0);
   const [quizfinished, setQuizFinished] = useState(false);
   const [submit, setSubmit] = useState(false);
@@ -207,13 +248,17 @@ const UIQuiz = () => {
     const a = questions[currentindex].answerOptions.find(
       (q) => q.answerText === pilihanjawaban
     );
+    console.log(a);
 
     if (a.isCorrect) {
       setScore((value) => value + 1);
+
       setPoint((p) => p + 100);
     }
-
     setSubmit(true);
+    // if (!submit) {
+    //   setCounter(15);
+    // }
   };
 
   const handlePilihJawaban = (answerText) => {
@@ -223,12 +268,13 @@ const UIQuiz = () => {
   const nextQuestion = () => {
     if (currentindex === questions.length - 1) {
       setQuizFinished(true);
-      if (score > 1) {
+
+      if (score > 7) {
         // toast("test");
         Swal.fire({
           title: "Sweet!",
           text: "Modal with a custom image.",
-          imageUrl: { badge1 },
+          imageUrl: {},
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: "Custom image",
@@ -247,7 +293,7 @@ const UIQuiz = () => {
     <>
       <p>{counter}</p>
       <div class="mb-5 h-2 rounded-full bg-gray-200">
-        <div class="h-2 rounded-full bg-orange-500" style="width: 50%"></div>
+        {/* <div class="h-2 rounded-full bg-orange-500" style="width: 50%"></div> */}
       </div>
       <p>t</p>
       <div className="z-30">
@@ -289,6 +335,7 @@ const UIQuiz = () => {
                 Basic HTML
               </h2>
               <p>{score}</p>
+              <p>{point}</p>
             </div>
             <div className="py-8 px-4">
               <div className="pb-2">

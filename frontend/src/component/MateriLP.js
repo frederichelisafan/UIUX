@@ -11,7 +11,7 @@ const MateriLP = () => {
     <>
       <section className="pb-12 lg:pb-[90px] dark:bg-dark z-20 ">
         <div className="mx-auto">
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap mx-4">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[600px] text-center">
                 <h2 className="text-[#443091] mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px]">
@@ -93,7 +93,7 @@ const PortfolioCard = ({ showCard, category, ImageHref, title, desc }) => {
             : "hidden"
         }`}
       >
-        <div className="relative mb-12">
+        <div className="relative mb-12 transform duration-500 hover:scale-110">
           <div className="overflow-hidden rounded-[10px]">
             <img src={ImageHref} alt="portfolio" className="w-full" />
           </div>

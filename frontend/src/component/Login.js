@@ -32,9 +32,9 @@ const Login = () => {
   };
 
   return (
-    <div class="flex min-w-full min-h-full flex-col justify-center px-6 py-12 lg:px-8 hero-bg">
+    <div class="flex min-w-full min-h-full flex-col justify-center px-6 py-12 lg:px-8 hero-bg mt-20">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <p className="text-3xl font-bold text-[#5830B2]">LOGIN</p>
+        <p className="text-3xl font-bold text-[#5830B2] text-center">LOGIN</p>
         <h2 class="mt-10 text-center text-lg font-bold leading-9 tracking-tight text-gray-900">
           <span className="text-[#9F7FE4] font-bold">
             Kami butuh Anda untuk login agar bisa memberikan{" "}
@@ -75,12 +75,12 @@ const Login = () => {
                 Password
               </label>
               <div class="text-sm">
-                <a
+                {/* <a
                   href="#"
                   class="font-semibold text-[#6446A5] hover:text-indigo-500"
                 >
                   Forgot password?
-                </a>
+                </a> */}
               </div>
             </div>
             <div class="mt-2">

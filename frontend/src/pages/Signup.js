@@ -22,9 +22,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-zinc-950 signup-bg">
+    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-zinc-950 signup-bg mt-12">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <p className="text-2xl font-bold text-white">SIGN UP</p>
+        <p className="text-2xl font-bold text-white text-center">SIGN UP</p>
         <h2 className="text-center text-lg font-bold leading-9 tracking-tight text-gray-900">
           <span className="text-[#FFAEF2] font-bold">
             Kami butuh Anda untuk login agar bisa memberikan{" "}

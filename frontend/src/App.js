@@ -28,19 +28,16 @@ function App() {
     //   {/* <Navbar /> */}
     //   {/* <Leaderboard /> */}
     //   {/* <Loginpage />
-    //   {/* <NavbarMain
-    //   <Footer /> */}
     //   {/* <Topic /> */}
     //   {/* <Signup /> */}
-    //   {/* <Quiz /> */}
     //   {/* <Topic /> */}
-    //   {/* <PlayQuiz /> */}
     //   {/* <PlayQuizMain /> */}
     //   {/* <Simplicity />/ */}
     //   {/* <Profile /> */}
-    //   <Materi />
+    //   {/* <Materi /> */}
     //   {/* <Loginpage /> */}
     //   {/* <Signup /> */}
+    //   <Simplicity />
     //   {/* <Test /> */}
     // </div>
 
@@ -50,6 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/quiz" element={<PlayQuizMain />} />
           <Route path="/register" element={<Signup />} />
           <Route path="/materi" element={<Materi />} />
           <Route path="/materi/UX" element={<UX />} />

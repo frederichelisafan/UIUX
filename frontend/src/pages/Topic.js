@@ -60,7 +60,7 @@ const Topic = () => {
   ];
 
   return (
-    <>
+    <div className="mt-24">
       {selectedTopic ? (
         renderSingleQuiz()
       ) : (
@@ -84,7 +84,7 @@ const Topic = () => {
           })}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

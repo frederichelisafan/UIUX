@@ -27,49 +27,64 @@ function UI() {
       </nav>
 
       {/*  Main Content */}
-      <div className="flex mt-20">
-        {/* Tombol-tombol materi pembelajaran */}
-        <div className="flex flex-col mr-4">
-          <button
-            onClick={() => showLesson("Pengertian & Komponen Utama UI")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Pengertian & Komponen Utama UI
-          </button>
-          <button
-            onClick={() => showLesson("Buttons & Input Fields")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Buttons & Input Fields
-          </button>
-          <button
-            onClick={() => showLesson("Dropdown Menu & Radio Buttons")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Dropdown Menu & Radio Buttons
-          </button>
-          <button
-            onClick={() => showLesson("Lists & Icons")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Lists & Icons
-          </button>
-          <button
-            onClick={() => showLesson("Navigation Bar & Cards")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Navigation Bar & Cards
-          </button>
-          <button
-            onClick={() => showLesson("Alerts & Checkboxes")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Alerts & Checkboxes
-          </button>
+
+      <div className="flex justify-center">
+        <div className="flex">
+          <div className="container">
+            <h2 className="mt-14 font-semibold text-lg">
+              Konten belajar
+              <hr />
+            </h2>
+
+            <div className="math font-raleway grid">
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Pengertian & Komponen Utama UI")}
+              >
+                <span className="text-start">
+                  Pengertian & Komponen Utama UI
+                </span>
+                <div className="flex"></div>
+              </button>
+
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Buttons & Input Fields")}
+              >
+                <span className="text-start">Buttons & Input Fields</span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Dropdown Menu & Radio Buttons")}
+              >
+                <span className="text-start">
+                  Dropdown Menu & Radio Buttons
+                </span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Lists & Icons")}
+              >
+                <span className="text-start">Lists & Icons</span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Navigation Bar & Cards")}
+              >
+                <span className="text-start">Navigation Bar & Cards</span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Alerts & Checkboxes")}
+              >
+                <span className="text-start">Alerts & Checkboxes</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Materi pembelajaran yang ditampilkan di sebelah kanan tombol */}
-        <div>
+        <div class="col-8">
+          <h1 className="font-raleway mt-9 mb-3">Choose and Learn with Fun</h1>
           {lessonToShow && (
             <div className="p-4 border border-gray-300 rounded-md">
               {/* Judul materi pembelajaran */}
@@ -239,6 +254,11 @@ function UI() {
               )}
             </div>
           )}
+
+          <div>
+            <br />
+            <br />
+          </div>
         </div>
       </div>
     </div>

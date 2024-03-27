@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../component/Navbar";
 
 function Consistency() {
   // State untuk melacak materi pembelajaran yang harus ditampilkan
@@ -12,32 +11,60 @@ function Consistency() {
 
   return (
     <div>
-      <Navbar />
+      <nav className="flex justify-between px-20 py-4 items-center bg-white shadow">
+        <img src="logoUI.png" alt="logo ui" />
+        <div className="flex items-center">
+          <ul className="flex items-center space-x-6 my-auto font-raleway cursor-pointer">
+            <li className="font-semibold text-gray-700">Quiz</li>
+            <li className="font-semibold text-gray-700">Materi</li>
+            <li className="font-semibold text-gray-700">Leaderboard</li>
+            <li className="font-semibold text-gray-700">Profile</li>
+            <li className="font-semibold text-white bg-red-500 px-4 py-2 border rounded">
+              Log out
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-      {/*  Main Content */}
-      <div className="flex mt-32">
-        {/* Tombol-tombol materi pembelajaran */}
-        <div className="flex flex-col mr-4">
-          <button
-            onClick={() =>
-              showLesson("Pengertian & Manfaat Prinsip Desain Consistency")
-            }
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Pengertian & Manfaat Prinsip Desain Consistency
-          </button>
-          <button
-            onClick={() =>
-              showLesson("Penerapan & Macam-macam Prinsip Desain Consistency")
-            }
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Penerapan & Macam-macam Prinsip Desain Consistency
-          </button>
+      <div className="flex justify-center">
+        <div className="flex">
+          <div className="container">
+            <h2 className="mt-14 font-semibold text-lg">
+              Konten belajar
+              <hr />
+            </h2>
+
+            <div className="math font-raleway grid">
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() =>
+                  showLesson("Pengertian & Manfaat Prinsip Desain Consistency")
+                }
+              >
+                <span className="text-start">
+                  Pengertian & Manfaat Prinsip Desain Consistency
+                </span>
+                <div className="flex"></div>
+              </button>
+
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() =>
+                  showLesson(
+                    "Penerapan & Macam-macam Prinsip Desain Consistency"
+                  )
+                }
+              >
+                <span className="text-start">
+                  Penerapan & Macam-macam Prinsip Desain Consistency
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Materi pembelajaran yang ditampilkan di sebelah kanan tombol */}
-        <div>
+        <div class="col-8">
+          <h1 className="font-raleway mt-9 mb-3">Choose and Learn with Fun</h1>
           {lessonToShow && (
             <div className="p-4 border border-gray-300 rounded-md">
               {/* Judul materi pembelajaran */}
@@ -133,6 +160,11 @@ function Consistency() {
               )}
             </div>
           )}
+
+          <div>
+            <br />
+            <br />
+          </div>
         </div>
       </div>
     </div>

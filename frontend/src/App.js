@@ -13,14 +13,13 @@ import Sidebar from "./component/Sidebar.js";
 import NavbarMain from "./component/NavbarMain.js";
 import { Nav } from "react-bootstrap";
 import UserInterface from "./materi/UserInterface.js";
-import Login from "./component/Login.js";
 import { User } from "@nextui-org/react";
-import Quiz from "./pages/Quiz.js";
 import Topic from "./pages/Topic.js";
 import HtmlQuiz from "./pages/UIQuiz.js";
 import PlayQuiz from "./pages/PlayQuiz.js";
 import PlayQuizMain from "./pages/PlayQuizMain.js";
 import Profile from "./pages/Profile.js";
+import Test from "./pages/Test.js";
 
 function App() {
   return (
@@ -37,10 +36,11 @@ function App() {
       {/* <Topic /> */}
       {/* <PlayQuiz /> */}
       {/* <PlayQuizMain /> */}
-      <Profile />
-      {/* <NavbarMain /> */}
+      {/* <Profile /> */}
+      <NavbarMain />
       {/* <Loginpage /> */}
       {/* <Signup /> */}
+      {/* <Test /> */}
     </div>
 
     // <>

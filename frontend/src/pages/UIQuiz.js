@@ -269,7 +269,8 @@ const UIQuiz = () => {
   const nextQuestion = () => {
     if (currentindex === questions.length - 1) {
       setQuizFinished(true);
-      if (score > 1) {
+
+      if (score > 7) {
         // toast("test");
         Swal.fire({
           title: "Sweet!",

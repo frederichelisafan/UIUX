@@ -5,7 +5,6 @@ import checked from "../assets/checked.png";
 // import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
-import badge1 from "../assets/badge/image 8.png";
 import GameOver from "../component/GameOver";
 import { QuizContext } from "../helpers/Context";
 
@@ -227,7 +226,7 @@ const UIQuiz = () => {
         Swal.fire({
           title: "Sweet!",
           text: "Modal with a custom image.",
-          imageUrl: { badge1 },
+          imageUrl: {},
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: "Custom image",

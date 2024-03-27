@@ -76,7 +76,7 @@ const Topic = () => {
                       handleTopic(item.topic);
                     }}
                   >
-                    belajar
+                    Start Quiz!
                   </button>
                 </div>
               </div>

@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 const Profile = () => {
-  const a = 40;
+  const [badge, setBadge] = useState("");
+
   return (
     <>
       <div className="p-6 sm:p-12 dark:text-gray-800 mx-40 hero-bg rounded-xl mt-32">
@@ -24,7 +27,11 @@ const Profile = () => {
         {/* Achievement badge */}
         <div className="text-center mt-10">
           <p className="text-xl">Achievement Badge</p>
-          <p className="text-purple-500 font-bold">Not Available</p>
+          {badge ? (
+            <p>Image badge</p>
+          ) : (
+            <p className="text-purple-500 font-bold">Not Available</p>
+          )}
         </div>
       </div>
     </>

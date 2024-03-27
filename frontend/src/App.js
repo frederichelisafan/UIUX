@@ -50,7 +50,9 @@ function App() {
           <Route path="/quiz" element={<PlayQuizMain />} />
           <Route path="/register" element={<Signup />} />
           <Route path="/materi" element={<Materi />} />
+          <Route path="/materi/UI" element={<UI />} />
           <Route path="/materi/UX" element={<UX />} />
+          <Route path="/materi/Consistency" element={<Consistency />} />
         </Routes>
         <Footer />
       </div>

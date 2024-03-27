@@ -1,7 +1,6 @@
 // import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { Fragment } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Landingpage from "./pages/Landingpage";
 import Course from "./pages/Course";
 import Loginpage from "./pages/Loginpage";
@@ -19,43 +18,32 @@ import HtmlQuiz from "./pages/UIQuiz.js";
 import PlayQuizMain from "./pages/PlayQuizMain.js";
 import Profile from "./pages/Profile.js";
 import Test from "./pages/Test.js";
+import Router from "./router/index.jsx";
 
 function App() {
   return (
-    <div>
-      {/* <Landingpage /> */}
-      {/* <Navbar /> */}
-      {/* <Leaderboard /> */}
-      {/* <Loginpage />
-      {/* <NavbarMain
-      <Footer /> */}
-      {/* <Topic /> */}
-      {/* <Signup /> */}
-      {/* <Quiz /> */}
-      {/* <Topic /> */}
-      {/* <PlayQuiz /> */}
-      {/* <PlayQuizMain /> */}
-      <UI />
-      {/* <Profile /> */}
-      {/* <NavbarMain /> */}
-      {/* <Loginpage /> */}
-      {/* <Signup /> */}
-      {/* <Test /> */}
-    </div>
+    // <div>
+    //   {/* <Landingpage /> */}
+    //   {/* <Navbar /> */}
+    //   {/* <Leaderboard /> */}
+    //   {/* <Loginpage />
+    //   {/* <NavbarMain
+    //   <Footer /> */}
+    //   {/* <Topic /> */}
+    //   {/* <Signup /> */}
+    //   {/* <Quiz /> */}
+    //   {/* <Topic /> */}
+    //   {/* <PlayQuiz /> */}
+    //   {/* <PlayQuizMain /> */}
+    //   <UI />
+    //   {/* <Profile /> */}
+    //   {/* <NavbarMain /> */}
+    //   {/* <Loginpage /> */}
+    //   {/* <Signup /> */}
+    //   {/* <Test /> */}
+    // </div>
 
-    // <>
-    //   <Navbar />
-    //   <div>
-    //     <Routes>
-    //       <Route path="/" element={<Landingpage />} />
-    //       <Route path="/login" element={<Login />} />
-    //       <Route path="/register" element={<Signup />} />
-    //       <Route path="/materi" element={<NavbarMain />} />
-    //       <Route path="/materi/UX" element={<UX />} />
-    //     </Routes>
-    //     <Footer />
-    //   </div>
-    // </>
+    <Router />
   );
 }
 

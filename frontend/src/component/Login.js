@@ -3,31 +3,39 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import FORMS from "../helpers/forms";
+import { login } from "../services/auth";
+import { PATH } from "../helpers/path";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    [FORMS.REGISTER.EMAIL.NAME]: "",
+    [FORMS.REGISTER.PASSWORD.NAME]: "",
+  });
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  function handleChange({ target: { name, value } }) {
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setError("");
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const userloginData = { email, password };
-    console.log(userloginData);
-    axios
-      .post("http://localhost:5000/login", userloginData)
-      .then((result) => {
-        console.log(result);
-        if (result.data === "Success") {
-          navigate("/quiz");
-        }
+
+    await login(
+      formData[FORMS.REGISTER.EMAIL.NAME],
+      formData[FORMS.REGISTER.PASSWORD.NAME]
+    )
+      .then(() => {
+        navigate(`/${PATH.DASHBOARD}`);
       })
-      .catch((error) => {
-        if (error.response && error.response.status === 401) {
-          setError("Invalid Email or Password");
-        } else {
-          setError("terjadi kesalahan server");
-        }
+      .catch((err) => {
+        setError(err);
       });
   };
 
@@ -47,21 +55,21 @@ const Login = () => {
         <form class="space-y-6" action="#" method="POST">
           <div>
             <label
-              for="email"
+              for={FORMS.REGISTER.EMAIL.NAME}
               class="block text-sm leading-6 text-gray-900 font-bold text-left"
             >
-              Email address
+              {FORMS.REGISTER.EMAIL.LABEL}
             </label>
             <div class="mt-2">
               <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id={FORMS.REGISTER.EMAIL.NAME}
+                name={FORMS.REGISTER.EMAIL.NAME}
+                type={FORMS.REGISTER.EMAIL.NAME}
+                autocomplete={FORMS.REGISTER.EMAIL.NAME}
+                value={formData[FORMS.REGISTER.EMAIL.NAME]}
+                onChange={handleChange}
                 required
-                class="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                class="px-2 w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -69,10 +77,10 @@ const Login = () => {
           <div>
             <div class="flex items-center justify-between">
               <label
-                for="password"
+                for={FORMS.REGISTER.PASSWORD.NAME}
                 class="block text-sm font-bold leading-6 text-gray-900"
               >
-                Password
+                {FORMS.REGISTER.PASSWORD.LABEL}
               </label>
               <div class="text-sm">
                 {/* <a
@@ -85,18 +93,18 @@ const Login = () => {
             </div>
             <div class="mt-2">
               <input
-                id="password"
-                name="password"
-                type="password"
-                autocomplete="current-password"
+                id={FORMS.REGISTER.PASSWORD.NAME}
+                name={FORMS.REGISTER.PASSWORD.NAME}
+                type={FORMS.REGISTER.PASSWORD.NAME}
+                autocomplete={FORMS.REGISTER.PASSWORD.NAME}
                 required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                class="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                value={formData[FORMS.REGISTER.PASSWORD.NAME]}
+                onChange={handleChange}
+                class="px-2 w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error ? <div className="text-red-500">{error}</div> : null}
           <div>
             <button
               onClick={handleSubmit}

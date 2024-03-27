@@ -1,24 +1,42 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import FORMS, { REGISTER_FORMS } from "../helpers/forms";
+import { register } from "../services/auth";
+import { PATH } from "../helpers/path";
 
 const Signup = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    [FORMS.REGISTER.USERNAME.NAME]: "",
+    [FORMS.REGISTER.EMAIL.NAME]: "",
+    [FORMS.REGISTER.PASSWORD.NAME]: "",
+  });
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  function handleChange(e) {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+
+    setError("");
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userdata = { username, email, password };
-    axios
-      .post("http://localhost:5000/register", userdata)
-      .then((result) => {
-        console.log(result);
-        navigate("/login");
+    await register(
+      formData[FORMS.REGISTER.USERNAME.NAME],
+      formData[FORMS.REGISTER.EMAIL.NAME],
+      formData[FORMS.REGISTER.PASSWORD.NAME]
+    )
+      .then(() => {
+        navigate(`/${PATH.LOGIN}`);
       })
-      .catch((error) => alert("User Already exists"));
+      .catch((err) => {
+        setError(err);
+      });
   };
 
   return (
@@ -34,70 +52,34 @@ const Signup = () => {
       </div>
 
       <div className="xl:ml-32 sm:ml-0 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" action="#" method="POST">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm leading-6 text-white font-bold text-left"
-            >
-              Username
-            </label>
-            <div className="mt-2">
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-                className="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm leading-6 text-white font-bold text-left"
-            >
-              Email address
-            </label>
-            <div className="mt-2">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                autoComplete="email"
-                required
-                className="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-center justify-between">
+        <form className="space-y-6" action="#">
+          {REGISTER_FORMS.map((form) => (
+            <div key={form.name}>
               <label
-                htmlFor="password"
-                className="block text-sm font-bold leading-6 text-white"
+                htmlFor={form.name}
+                className="block text-sm leading-6 text-white font-bold text-left"
               >
-                Password
+                {form.label}
               </label>
+              <div className="mt-2">
+                <input
+                  type={
+                    form.name === FORMS.REGISTER.PASSWORD.NAME
+                      ? "password"
+                      : "text"
+                  }
+                  id={form.name}
+                  name={form.name}
+                  value={formData[form.name]}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-md px-2 border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
             </div>
-            <div className="mt-2">
-              <input
-                id="password"
-                name="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="current-password"
-                required
-                className="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
+          ))}
+
+          {error ? <div className="text-red-500">{error}</div> : null}
 
           <div>
             <button

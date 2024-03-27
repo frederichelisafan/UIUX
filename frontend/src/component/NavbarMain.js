@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../services/auth";
+import { PATH } from "../helpers/path";
 
 const NavbarMain = () => {
+  const navigate = useNavigate();
+  function handleLogout() {
+    logout();
+    navigate(`${PATH.LANDING}`);
+  }
   return (
     <>
       <nav className="flex justify-between px-20 py-4 items-center bg-white shadow">
@@ -11,15 +18,15 @@ const NavbarMain = () => {
             <li className="font-semibold text-gray-700">Materi</li>
             <li className="font-semibold text-gray-700">Leaderboard</li>
             <li className="font-semibold  bg-red-500 px-4 py-2 border rounded">
-              <Link to="/" className="text-white no-underline">
+              <span onClick={handleLogout} className="text-white no-underline">
                 Log out
-              </Link>
+              </span>
             </li>
           </ul>
         </div>
       </nav>
 
-      <p className="font-raleway text-4xl mt-14 font-bold text-[#523889] text-center">
+      {/* <p className="font-raleway text-4xl mt-14 font-bold text-[#523889] text-center">
         <span className="text-[#B50097]">Ilmu adalah Kunci,</span> Ayo Mulai
         Petualanganmu!
       </p>
@@ -218,7 +225,7 @@ const NavbarMain = () => {
                 <div class="arrow"></div>
               </div>
             </button> */}
-          </div>
+          {/* </div>
         </div>
 
         <div class="e-card playing mt-0">
@@ -259,7 +266,7 @@ const NavbarMain = () => {
             <div class="name">Frederich Elisafan</div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -1,5 +1,5 @@
 // import loginBg from "../assets/LoginBg.png";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -98,13 +98,14 @@ const Login = () => {
           </div>
           {error && <p style={{ color: "red" }}>{error}</p>}
           <div>
-            <button
-              onClick={handleSubmit}
+            <Link
+              // onClick={handleSubmit}
+              to={"/quiz"}
               type="submit"
               class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Sign in
-            </button>
+            </Link>
           </div>
         </form>
 

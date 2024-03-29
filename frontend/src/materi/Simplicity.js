@@ -38,34 +38,22 @@ function Simplicity() {
             <div className="math font-raleway grid">
               <button
                 className="border bg-transparent text-black grid"
-                onClick={() => showLesson("Pengertian & Komponen Utama UX")}
+                onClick={() => showLesson("Pengertian & Manfaat Simplicity")}
               >
-                <span className="text-start">Simplicity</span>
+                <span className="text-start">
+                  Pengertian & Manfaat Simplicity
+                </span>
                 <div className="flex"></div>
               </button>
 
               <button
                 className="border bg-transparent text-black grid"
-                onClick={() => showLesson("Pengertian & Metode UX Research")}
-              >
-                <span className="text-start">
-                  Pengertian & Metode UX Research
-                </span>
-              </button>
-              <button
-                className="border bg-transparent text-black grid"
-                onClick={() => showLesson("Proses UX Research")}
-              >
-                <span className="text-start">Proses UX Research</span>
-              </button>
-              <button
-                className="border bg-transparent text-black grid"
                 onClick={() =>
-                  showLesson("Manfaat dan Implementasi UX Research")
+                  showLesson("Penerapan & Prinsip Desain Simplicity")
                 }
               >
                 <span className="text-start">
-                  Manfaat dan Implementasi UX Research
+                  Penerapan & Prinsip Desain Simplicity
                 </span>
               </button>
             </div>
@@ -74,77 +62,89 @@ function Simplicity() {
 
         <div class="col-8">
           <h1 className="font-raleway mt-9 mb-3">Choose and Learn with Fun</h1>
-          {lessonToShow === "Pengertian & Metode UX Research" && (
+          {lessonToShow === "Pengertian & Manfaat Simplicity" && (
             <div>
-              <h4>**Pengantar tentang UX Research**</h4>
+              <h4>**Pengertian Prinsip Desain Simplicity**</h4>
               <div>
                 <p>
-                  - Definisi UX Research: Proses memahami pengguna melalui
-                  pengumpulan data untuk meningkatkan desain produk.
-                </p>
-                <p>
-                  - Tujuan UX Research: Mengidentifikasi masalah, memahami
-                  kebutuhan pengguna, dan menguji desain untuk pengalaman
-                  pengguna yang lebih baik.
+                  - Prinsip desain simplicity adalah pendekatan untuk mengurangi
+                  kompleksitas dan menyederhanakan elemen-elemen produk untuk
+                  menciptakan pengalaman pengguna yang intuitif dan mudah
+                  dipahami. Ini melibatkan penghapusan elemen-elemen yang tidak
+                  perlu dan fokus pada hal-hal yang paling penting bagi
+                  pengguna.
                 </p>
               </div>
 
-              <h4>**Metode-metode UX Research**</h4>
+              <h4>**Manfaat Prinsip Desain Simplicity**</h4>
               <div>
                 <p>
-                  - Observasi Pengguna: Melihat langsung bagaimana pengguna
-                  berinteraksi dengan produk.
+                  - Meningkatkan Ketercapaian Produk: Pengguna lebih mungkin
+                  untuk mencapai tujuan mereka dengan cepat dan efisien jika
+                  produk memiliki antarmuka yang sederhana.
                 </p>
                 <p>
                   {" "}
-                  - Wawancara Pengguna: Mendengarkan pengguna untuk memahami
-                  kebutuhan dan masalah mereka.
+                  - Meminimalkan Kesalahan Pengguna: Semakin kompleks desain,
+                  semakin besar kemungkinan pengguna membuat kesalahan.
+                  Kesederhanaan membantu mengurangi risiko kesalahan.
                 </p>
                 <p>
-                  - Survei dan Kuesioner: Mengumpulkan data dari sejumlah besar
-                  responden untuk menganalisis tren.
+                  - Meningkatkan Kepuasan Pengguna: Pengguna cenderung lebih
+                  puas dengan produk yang mudah digunakan dan tidak
+                  membingungkan.
                 </p>
                 <p>
-                  - A/B Testing: Membandingkan dua versi produk untuk menentukan
-                  yang lebih efektif.
-                </p>
-                <p>
-                  {" "}
-                  - Card Sorting: Mengorganisir informasi produk dengan
-                  melibatkan pengguna.
+                  - Mempercepat Pembelajaran Pengguna: Kesederhanaan
+                  memungkinkan pengguna untuk dengan cepat memahami cara
+                  menggunakan produk tanpa perlu melalui kurva pembelajaran yang
+                  curam.
                 </p>
               </div>
             </div>
           )}
 
-          {lessonToShow === "Pengertian & Komponen Utama UX" && (
+          {lessonToShow === "Penerapan & Prinsip Desain Simplicity" && (
             <div>
-              <h4>**Apa itu User Experience**</h4>
+              <h4>**Penerapan Prinsip Desain Simplicity**</h4>
               <div>
                 <p>
-                  - UX merupakan keseluruhan interaksi pengguna dengan produk
-                  atau sistem, termasuk aspek-aspek fungsional, estetika, dan
-                  emosional.{" "}
+                  - Pemetaan Alur Pengguna: Memahami bagaimana pengguna
+                  berinteraksi dengan produk dan menghilangkan hambatan-hambatan
+                  yang tidak perlu dalam alur kerja mereka.
                 </p>
                 <p>
-                  - UX mencakup bagaimana pengguna merasa, berpikir, dan
-                  bertindak saat menggunakan produk atau sistem tersebut.
+                  - Pengujian Pengguna: Melakukan pengujian pengguna untuk
+                  mengidentifikasi area-area dalam antarmuka pengguna yang
+                  membingungkan atau tidak intuitif.
+                </p>
+                <p>
+                  - Konsistensi Desain: Menjaga konsistensi dalam desain
+                  antarmuka pengguna untuk membuatnya lebih mudah dipahami oleh
+                  pengguna.
+                </p>
+                <p>
+                  - Iterasi dan Perbaikan: Melakukan iterasi desain secara
+                  teratur berdasarkan umpan balik pengguna untuk meningkatkan
+                  kesederhanaan dan efektivitas produk.
                 </p>
               </div>
 
-              <h4>**Komponen-komponen Utama UX**</h4>
+              <h4>**Prinsip-prinsip Desain Simplicity**</h4>
               <div>
                 <p>
-                  - Kegunaan (Usability): Seberapa mudah produk dapat digunakan
-                  oleh pengguna untuk mencapai tujuan mereka.
+                  - Menghilangkan yang Tidak Perlu: Identifikasi dan hapus
+                  elemen-elemen yang tidak memberikan nilai tambah bagi
+                  pengguna.
                 </p>
                 <p>
-                  - Kesenangan (Desirability): Seberapa menarik dan menyenangkan
-                  pengalaman menggunakan produk tersebut.
+                  - Klaritas dan Keterbacaan: Pastikan antarmuka pengguna jelas
+                  dan mudah dipahami tanpa kebingungan.
                 </p>
                 <p>
-                  - Kepercayaan (Credibility): Seberapa dapat dipercaya dan aman
-                  produk dalam penggunaan pengguna.
+                  - Minimalkan Pilihan: Terlalu banyak pilihan dapat membuat
+                  pengguna kebingungan. Batasi jumlah opsi untuk membuat
+                  keputusan lebih mudah.
                 </p>
               </div>
             </div>

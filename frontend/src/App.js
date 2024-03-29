@@ -20,6 +20,7 @@ import Profile from "./pages/Profile.js";
 import Test from "./pages/Test.js";
 import Consistency from "./materi/Consistency.js";
 import Simplicity from "./materi/Simplicity.js";
+import Welcome from "./pages/Welcome.js";
 
 function App() {
   return (
@@ -33,11 +34,11 @@ function App() {
     //   {/* <Topic /> */}
     //   {/* <PlayQuizMain /> */}
     //   {/* <Simplicity />/ */}
-    //   {/* <Profile /> */}
+    //   <Profile />
     //   {/* <Materi /> */}
     //   {/* <Loginpage /> */}
     //   {/* <Signup /> */}
-    //   <Simplicity />
+    //   {/* <Simplicity /> */}
     //   {/* <Test /> */}
     // </div>
 
@@ -53,6 +54,8 @@ function App() {
           <Route path="/materi/UI" element={<UI />} />
           <Route path="/materi/UX" element={<UX />} />
           <Route path="/materi/Consistency" element={<Consistency />} />
+          <Route path="/materi/Simplicity" element={<Simplicity />} />
+          <Route path="/home" element={<Welcome />} />
         </Routes>
         <Footer />
       </div>

@@ -1,7 +1,7 @@
 const GameOver = () => {
   return (
     <>
-      <p>Game over</p>
+      <p className="mt-40">Game over</p>
     </>
   );
 };

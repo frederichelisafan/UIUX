@@ -64,10 +64,17 @@ const Topic = () => {
       {selectedTopic ? (
         renderSingleQuiz()
       ) : (
-        <div>
+        <div className="">
+          <p className=" text-[#523889] text-4xl mt-28 text-center">
+            <span className="text-[#B50097]">Test Your Knowledge:</span> Join
+            Our Exciting Quiz Challenge!
+          </p>
+          <h4 className="text-[#523889] text-center">
+            You'll have 15 second to answer each questions.
+          </h4>
           {topiclist.map((item) => {
             return (
-              <div className="grid grid-cols-4 gap-0" key={item.id}>
+              <div className="container" key={item.id}>
                 <div className="container">
                   <p>{item.title}</p>
                   <button

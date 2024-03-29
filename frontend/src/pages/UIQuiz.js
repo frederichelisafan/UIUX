@@ -332,7 +332,7 @@ const UIQuiz = () => {
           <div>
             <div className="bg-blue-400 text-center px-4 py-2 rounded-t-lg">
               <h2 className="text-2xl text-white font-semibold tracking-wide">
-                Basic HTML
+                User Interface (UI)
               </h2>
               <p>{score}</p>
               <p>{point}</p>

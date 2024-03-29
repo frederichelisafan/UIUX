@@ -35,6 +35,12 @@ code {
   background-repeat: repeat; 
 }
 
+.welcome-bg{
+		background-image:url('./assets/mountain.png');
+		background-repeat: no-repeat;
+		
+}
+
 .signup-bg {
   /* background-image: url('./assets/waves.svg'), url('./assets/endless-clouds.svg');
   background-size: 103%, 80px;

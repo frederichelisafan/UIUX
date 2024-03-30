@@ -56,6 +56,7 @@ function App() {
           <Route path="/materi/Consistency" element={<Consistency />} />
           <Route path="/materi/Simplicity" element={<Simplicity />} />
           <Route path="/home" element={<Welcome />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
         <Footer />
       </div>

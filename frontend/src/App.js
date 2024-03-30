@@ -29,24 +29,6 @@ import Aesthetic from "./materi/Aesthetic.js";
 
 function App() {
   return (
-    // <div>
-    //   {/* <Landingpage /> */}
-    //   {/* <Navbar /> */}
-    //   {/* <Leaderboard /> */}
-    //   {/* <Loginpage />
-    //   {/* <Topic /> */}
-    //   {/* <Signup /> */}
-    //   {/* <Topic /> */}
-    //   {/* <PlayQuizMain /> */}
-    //   {/* <Simplicity />/ */}
-    //   <Profile />
-    //   {/* <Materi /> */}
-    //   {/* <Loginpage /> */}
-    //   {/* <Signup /> */}
-    //   {/* <Simplicity /> */}
-    //   {/* <Test /> */}
-    // </div>
-
     <>
       <Navbar />
       <div>

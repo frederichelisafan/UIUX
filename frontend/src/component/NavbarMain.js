@@ -1,9 +1,10 @@
 import React from "react";
+import logo from "../assets/logoUI.png";
 
 const NavbarMain = () => {
   return (
     <nav className="flex justify-between px-20 py-4 items-center bg-white shadow">
-      <img src="logoUI.png" alt="logo ui" />
+      <img src={logo} alt="logo ui" />
       <div className="flex items-center">
         <ul className="flex items-center space-x-6 my-auto font-raleway cursor-pointer">
           <li className="font-semibold text-gray-700">Quiz</li>

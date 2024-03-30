@@ -21,6 +21,11 @@ import Test from "./pages/Test.js";
 import Consistency from "./materi/Consistency.js";
 import Simplicity from "./materi/Simplicity.js";
 import Welcome from "./pages/Welcome.js";
+import Clarity from "./materi/Clarity.js";
+import ClearFeedback from "./materi/ClearFeedback.js";
+import Flexibility from "./materi/Flexibility.js";
+import ClearFunctionality from "./materi/ClearFunctionality.js";
+import Aesthetic from "./materi/Aesthetic.js";
 
 function App() {
   return (
@@ -55,6 +60,14 @@ function App() {
           <Route path="/materi/UX" element={<UX />} />
           <Route path="/materi/Consistency" element={<Consistency />} />
           <Route path="/materi/Simplicity" element={<Simplicity />} />
+          <Route path="/materi/Clarity" element={<Clarity />} />
+          <Route path="/materi/ClearFeedback" element={<ClearFeedback />} />
+          <Route path="/materi/Flexibility" element={<Flexibility />} />
+          <Route path="/materi/Aesthetic" element={<Aesthetic />} />
+          <Route
+            path="/materi/ClearFunctionality"
+            element={<ClearFunctionality />}
+          />
           <Route path="/home" element={<Welcome />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>

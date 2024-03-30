@@ -5,7 +5,7 @@ const GameOver = () => {
         GAME <span className="text-[#B50096]">OVER</span>
       </h1>
       <div className="text-center mb-8">
-        <h6>Oop's you run out of time</h6>
+        <h6>Oops you run out of time</h6>
         <h6>Better luck next time</h6>
       </div>
       <div className="flex justify-center">

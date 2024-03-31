@@ -1,9 +1,9 @@
 const GameOver = () => {
   return (
     <>
-      <h1 className="mt-40 font-raleway text-[#443091] font-bold  text-center">
+      <p className="mt-40 font-raleway text-[#443091] text-4xl font-bold  text-center">
         GAME <span className="text-[#B50096]">OVER</span>
-      </h1>
+      </p>
       <div className="text-center mb-8">
         <h6>Oops you run out of time</h6>
         <h6>Better luck next time</h6>

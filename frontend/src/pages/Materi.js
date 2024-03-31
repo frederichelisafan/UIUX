@@ -49,9 +49,9 @@ const NavbarMain = () => {
             </Link>
           </div>
 
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+          <div class="wave0"></div>
+          <div class="wave0"></div>
+          <div class="wave0"></div>
 
           <div class="infotop">
             <svg
@@ -360,9 +360,9 @@ const NavbarMain = () => {
             </Link>
           </div>
 
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+          <div class="wave0"></div>
+          <div class="wave0"></div>
+          <div class="wave0"></div>
 
           <div class="infotop">
             <svg
@@ -664,9 +664,9 @@ const NavbarMain = () => {
             </Link>
           </div>
 
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+          <div class="wave0"></div>
+          <div class="wave0"></div>
+          <div class="wave0"></div>
 
           <div class="infotop">
             <svg

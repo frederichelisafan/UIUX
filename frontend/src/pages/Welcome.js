@@ -11,7 +11,7 @@ const Welcome = () => {
           WELCOME <span className="text-[#B50096]">USERNAME.</span>
         </h1>
         <p className="text-center mt-3 w-[600px] mx-auto">
-          Aplikasi pembelajaran UI/UX adalah platform digital yang dirancang
+          Website pembelajaran UI/UX adalah platform digital yang dirancang
           untuk membantu pengguna memahami prinsip-prinsip desain antarmuka
           pengguna (UI) dan pengalaman pengguna (UX) melalui serangkaian materi
           pembelajaran dan quiz. Aplikasi ini bertujuan untuk memberikan

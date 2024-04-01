@@ -56,11 +56,8 @@ const Leaderboard = () => {
             <span className="text-sm text-gray-500 dark:text-gray-400">
               gabriel.martua@gmail.com
             </span>
-            <div className="flex mt-4 ">
-              <p className="text-xl border-r-2 w-36 font-bold">
-                81% <br /> <span className="font-normal">Progress</span>
-              </p>
-              <p className="text-xl w-36 border-l-2 font-bold">
+            <div className="flex mt-4 text-center">
+              <p className="text-xl w-36 font-bold">
                 4750 <br />
                 <span className="font-normal">Points</span>
               </p>
@@ -106,11 +103,8 @@ const Leaderboard = () => {
             <span className="text-sm text-gray-500 dark:text-gray-400">
               frederich.elisafan@gmail.com
             </span>
-            <div className="flex mt-4 ">
-              <p className="text-xl border-r-2 w-36 font-bold">
-                81% <br /> <span className="font-normal">Progress</span>
-              </p>
-              <p className="text-xl w-36 border-l-2 font-bold">
+            <div className="flex mt-4 text-center">
+              <p className="text-xl w-36 font-bold">
                 4750 <br /> <span className="font-normal">Points</span>
               </p>
             </div>
@@ -155,12 +149,8 @@ const Leaderboard = () => {
             <span className="text-sm text-gray-500 dark:text-gray-400">
               marcelino.ryan@gmail.com
             </span>
-            <div className="flex mt-4 ">
-              <p className="text-xl border-r-2 w-36 font-bold">
-                81% <br />
-                <span className="font-normal">Progress</span>
-              </p>
-              <p className="text-xl w-36 border-l-2 font-bold">
+            <div className="flex mt-4 text-center">
+              <p className="text-xl w-36 font-bold">
                 4750 <br /> <span className="font-normal">Points</span>
               </p>
             </div>
@@ -178,17 +168,14 @@ const Leaderboard = () => {
         />
         <p className="text-md font-bold">Benedictus Chrisvaldo</p>
         <p className="text-xs text-gray-500">benedictus.chrisvaldo@gmail.com</p>
-        <p className="text-sm font-bold">
-          81% <br />
-          <span className="font-normal">Progress</span>
-        </p>
+
         <p className="text-sm font-bold">
           4750 <br /> <span className="font-normal">Points</span>
         </p>
       </div>
 
       <div className="grid lg:grid-cols-6 place-items-center border-b-4 md:grid-cols-1 sm:grid-cols-1 font-inter">
-        <p className="text-xl font-bold">#4</p>
+        <p className="text-xl font-bold">#5</p>
         <img
           className="w-12 h-12 mb-3 mt-3 rounded-full shadow-lg"
           src="/docs/images/people/profile-picture-3.jpg"
@@ -196,10 +183,7 @@ const Leaderboard = () => {
         />
         <p className="text-md font-bold">Benedictus Chrisvaldo</p>
         <p className="text-xs text-gray-500">benedictus.chrisvaldo@gmail.com</p>
-        <p className="text-sm font-bold">
-          81% <br />
-          <span className="font-normal">Progress</span>
-        </p>
+
         <p className="text-sm font-bold">
           4750 <br /> <span className="font-normal">Points</span>
         </p>

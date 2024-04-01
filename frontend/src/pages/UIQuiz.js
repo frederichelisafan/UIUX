@@ -291,11 +291,10 @@ const UIQuiz = () => {
 
   return (
     <>
-      <p>{counter}</p>
       <div class="mb-5 h-2 rounded-full bg-gray-200">
         {/* <div class="h-2 rounded-full bg-orange-500" style="width: 50%"></div> */}
       </div>
-      <p>t</p>
+
       <div className="z-30">
         {quizfinished ? (
           <div className="text-center px-4 py-8">
@@ -330,27 +329,30 @@ const UIQuiz = () => {
           </div>
         ) : (
           <div>
-            <div className="bg-blue-400 text-center px-4 py-2 rounded-t-lg">
-              <h2 className="text-2xl text-white font-semibold tracking-wide">
-                Basic HTML
+            <div className="text-center px-4 py-2 rounded-t-lg">
+              <h2 className="text-[#523889] font-semibold tracking-wide text-4xl">
+                User Interface (UI)
               </h2>
-              <p>{score}</p>
-              <p>{point}</p>
+              <div className="flex justify-between text-lg text-black font-bold">
+                <p>Time : {counter}</p>
+                <p>Score : {score}</p>
+              </div>
             </div>
             <div className="py-8 px-4">
               <div className="pb-2">
-                <h3 className="font-semibold text-lg">
+                <h1 className="font-semibold text-2xl text-end">
                   <span className="text-lg bg-slate-200 w-fit rounded-lg px-2 py-1 shadow mr-2 text-black">
                     {currentindex + 1} / {questions.length}{" "}
                   </span>
+                </h1>
+                <h4 className="text-center">
                   {questions[currentindex].questionText}
-                </h3>
+                </h4>
               </div>
-              <div className="mt-2 flex flex-col text-left">
+              <div className="mt-10 flex flex-col text-left">
                 {questions[currentindex].answerOptions.map((answer, e) => {
                   return (
                     <button
-                      // className="mt-2 bg-slate-200 rounded-lg border border-slate-300 py-2 px-4 hover:bg-slate-300"
                       className={
                         answer.isCorrect && submit
                           ? "bg-green-500"
@@ -371,21 +373,23 @@ const UIQuiz = () => {
                 })}
               </div>
             </div>
-            <button
-              className="bg-primary"
-              onClick={nextQuestion}
-              disabled={!submit}
-            >
-              Next
-            </button>
+            <div className="flex justify-center mb-12">
+              <button
+                className="bg-primary mr-4 rounded-sm"
+                onClick={nextQuestion}
+                disabled={!submit}
+              >
+                Next
+              </button>
 
-            <button
-              className="bg-primary"
-              onClick={handleCekJawaban}
-              disabled={submit || !pilihanjawaban}
-            >
-              Submit
-            </button>
+              <button
+                className="bg-primary rounded-sm"
+                onClick={handleCekJawaban}
+                disabled={submit || !pilihanjawaban}
+              >
+                Submit
+              </button>
+            </div>
           </div>
         )}
       </div>

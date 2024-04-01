@@ -1,22 +1,23 @@
 // import loginBg from "../assets/LoginBg.png";
-// import { Link } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import FORMS from "../helpers/forms";
-import { login } from "../services/auth";
+import FORMS, { LOGIN_FORMS } from "../helpers/forms";
+import { login } from "../service/auth";
+import useAuth from "../store/useAuth";
 import { PATH } from "../helpers/path";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    [FORMS.REGISTER.EMAIL.NAME]: "",
-    [FORMS.REGISTER.PASSWORD.NAME]: "",
+  const navigate = useNavigate();
+  const { setUser } = useAuth((state) => state);
+  const [formInput, setFormInput] = useState({
+    [FORMS.AUTH.EMAIL.NAME]: "",
+    [FORMS.AUTH.PASSWORD.NAME]: "",
   });
   const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   function handleChange({ target: { name, value } }) {
-    setFormData((prev) => ({
+    setFormInput((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -24,23 +25,26 @@ const Login = () => {
     setError("");
   }
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     await login(
-      formData[FORMS.REGISTER.EMAIL.NAME],
-      formData[FORMS.REGISTER.PASSWORD.NAME]
+      formInput[FORMS.AUTH.EMAIL.NAME],
+      formInput[FORMS.AUTH.PASSWORD.NAME]
     )
-      .then(() => {
-        navigate(`/${PATH.DASHBOARD}`);
+      .then((res) => {
+        setUser(res);
+        navigate(PATH.DASHBOARD);
       })
       .catch((err) => {
         setError(err);
+      .catch((err) => {
+        setError(err);
       });
-  };
+  }
 
   return (
-    <div class="flex min-w-full min-h-full flex-col justify-center px-6 py-12 lg:px-8 hero-bg mt-20">
+    <div class="flex min-w-full grow flex-col justify-center px-6 py-12 lg:px-8 hero-bg mt-20">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <p className="text-3xl font-bold text-[#5830B2] text-center">LOGIN</p>
         <h2 class="mt-10 text-center text-lg font-bold leading-9 tracking-tight text-gray-900">
@@ -52,62 +56,37 @@ const Login = () => {
       </div>
 
       <div class="mt-10 mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" action="#" method="POST">
-          <div>
-            <label
-              for={FORMS.REGISTER.EMAIL.NAME}
-              class="block text-sm leading-6 text-gray-900 font-bold text-left"
-            >
-              {FORMS.REGISTER.EMAIL.LABEL}
-            </label>
-            <div class="mt-2">
-              <input
-                id={FORMS.REGISTER.EMAIL.NAME}
-                name={FORMS.REGISTER.EMAIL.NAME}
-                type={FORMS.REGISTER.EMAIL.NAME}
-                autocomplete={FORMS.REGISTER.EMAIL.NAME}
-                value={formData[FORMS.REGISTER.EMAIL.NAME]}
-                onChange={handleChange}
-                required
-                class="px-2 w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between">
+        <form onSubmit={handleSubmit} class="space-y-6" action="#">
+          {LOGIN_FORMS.map((item) => (
+            <div key={item.name}>
               <label
-                for={FORMS.REGISTER.PASSWORD.NAME}
-                class="block text-sm font-bold leading-6 text-gray-900"
+                for={item.name}
+                class="block text-sm leading-6 text-gray-900 font-bold text-left"
               >
-                {FORMS.REGISTER.PASSWORD.LABEL}
+                {item.label}
               </label>
-              <div class="text-sm">
-                {/* <a
-                  href="#"
-                  class="font-semibold text-[#6446A5] hover:text-indigo-500"
-                >
-                  Forgot password?
-                </a> */}
+              <div class="mt-2">
+                <input
+                  id={item.name}
+                  name={item.name}
+                  type={
+                    item.name === FORMS.AUTH.PASSWORD.NAME
+                      ? "password"
+                      : "email"
+                  }
+                  autocomplete={item.name}
+                  value={formInput[item.name]}
+                  onChange={handleChange}
+                  required
+                  class="block w-full rounded-md border-2 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
               </div>
             </div>
-            <div class="mt-2">
-              <input
-                id={FORMS.REGISTER.PASSWORD.NAME}
-                name={FORMS.REGISTER.PASSWORD.NAME}
-                type={FORMS.REGISTER.PASSWORD.NAME}
-                autocomplete={FORMS.REGISTER.PASSWORD.NAME}
-                required
-                value={formData[FORMS.REGISTER.PASSWORD.NAME]}
-                onChange={handleChange}
-                class="px-2 w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          {error ? <div className="text-red-500">{error}</div> : null}
+          ))}
+
+          {error && <div style={{ color: "red" }}>{error}</div>}
           <div>
             <button
-              onClick={handleSubmit}
               type="submit"
               class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
@@ -118,12 +97,12 @@ const Login = () => {
 
         <p class="mt-10 text-center text-sm text-black">
           Anda belum mempunyai akun?
-          <a
-            href="#"
+          <Link
+            to={"/" + PATH.REGISTER}
             class="font-semibold leading-6 text-[#443091] hover:text-indigo-500 no-underline ml-1"
           >
             Daftar Disini
-          </a>
+          </Link>
         </p>
       </div>
       {/* <img

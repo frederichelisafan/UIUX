@@ -5,22 +5,27 @@ const Profile = () => {
 
   return (
     <>
-      <div className="p-6 sm:p-12 dark:text-gray-800 mx-40 hero-bg rounded-xl mt-32">
-        <div className="flex space-y-4 md:space-y-0 md:space-x-6 md:flex-row justify-center">
+      <div className="p-6 sm:p-12 dark:text-gray-800 md:mx-40 hero-bg rounded-xl mt-32">
+        <div className="flex flex-col md:space-y-0 md:space-x-6 justify-center md:flex-row">
           <img
-            src="https://source.unsplash.com/75x75/?portrait"
+            src=""
             alt=""
             className="self-center flex-shrink-0 w-32 h-32 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300"
           />
-          <div className="flex flex-col">
-            <h4 className="text-lg font-bold text-left mb-0" id="profile-name">
+          <div className="flex flex-col text-center">
+            <h4
+              className="text-lg font-bold mb-0 mt-3 md:text-left"
+              id="profile-name"
+            >
               Frederich Elisafan
             </h4>
-            <p className="text-[#818181] text-xs">
+            <p className="text-[#818181] text-xs md:text-left">
               frederich.elisafan@gmail.com
             </p>
-            <p className="text-lg font-semibold mb-0">Statistik</p>
-            <p className="dark:text-gray-600">Total Points: 1000</p>
+            <p className="text-lg font-semibold mb-0 md:text-left">Statistik</p>
+            <p className="dark:text-gray-600 md:text-left">
+              Total Points: 1000
+            </p>
           </div>
         </div>
 

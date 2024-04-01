@@ -1,16 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
-// import useSelector and useDispatch hooks from react-redux to access state and dispatch actions
-// import { useSelector, useDispatch } from "react-redux";
-// import darkmode action
-// import { TOGGLE_DARKMODE } from "../features/darkModeSlice";
-
-// import logo from "../assets/logoUI.png";
-// import logoText from "../assets/UXSTUDYDARK.png";
-// import logoTextDarkMode from "../assets/UXSTUDYDARK.png";
-// import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 import signinlogo from "../assets/signinlogo.png";
+import logo from "../assets/logoUI.png";
 
 const Navbar = () => {
   return (
@@ -19,7 +10,7 @@ const Navbar = () => {
         <div className="mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             <Link to="/">
-              <img src="logoUI.png" alt="logo ui" />
+              <img src={logo} alt="logo ui" />
             </Link>
 
             <div className="hidden sm:flex sm:items-center">

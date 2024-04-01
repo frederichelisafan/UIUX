@@ -27,49 +27,64 @@ function UI() {
       </nav>
 
       {/*  Main Content */}
-      <div className="flex mt-20">
-        {/* Tombol-tombol materi pembelajaran */}
-        <div className="flex flex-col mr-4">
-          <button
-            onClick={() => showLesson("Pengertian & Komponen Utama UI")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Pengertian & Komponen Utama UI
-          </button>
-          <button
-            onClick={() => showLesson("Buttons & Input Fields")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Buttons & Input Fields
-          </button>
-          <button
-            onClick={() => showLesson("Dropdown Menu & Radio Buttons")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Dropdown Menu & Radio Buttons
-          </button>
-          <button
-            onClick={() => showLesson("Lists & Icons")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Lists & Icons
-          </button>
-          <button
-            onClick={() => showLesson("Navigation Bar & Cards")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Navigation Bar & Cards
-          </button>
-          <button
-            onClick={() => showLesson("Alerts & Checkboxes")}
-            className="mb-2 py-2 px-4 bg-blue-500 text-white  hover:bg-blue-600"
-          >
-            Alerts & Checkboxes
-          </button>
+
+      <div className="flex justify-center">
+        <div className="flex">
+          <div className="container">
+            <h2 className="mt-14 font-semibold text-lg">
+              Konten belajar
+              <hr />
+            </h2>
+
+            <div className="math font-raleway grid">
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Pengertian & Komponen Utama UI")}
+              >
+                <span className="text-start">
+                  Pengertian & Komponen Utama UI
+                </span>
+                <div className="flex"></div>
+              </button>
+
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Buttons & Input Fields")}
+              >
+                <span className="text-start">Buttons & Input Fields</span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Dropdown Menu & Radio Buttons")}
+              >
+                <span className="text-start">
+                  Dropdown Menu & Radio Buttons
+                </span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Lists & Icons")}
+              >
+                <span className="text-start">Lists & Icons</span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Navigation Bar & Cards")}
+              >
+                <span className="text-start">Navigation Bar & Cards</span>
+              </button>
+              <button
+                className="border bg-transparent text-black grid"
+                onClick={() => showLesson("Alerts & Checkboxes")}
+              >
+                <span className="text-start">Alerts & Checkboxes</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Materi pembelajaran yang ditampilkan di sebelah kanan tombol */}
-        <div>
+        <div class="col-8">
+          <h1 className="font-raleway mt-9 mb-3">Choose and Learn with Fun</h1>
           {lessonToShow && (
             <div className="p-4 border border-gray-300 rounded-md">
               {/* Judul materi pembelajaran */}
@@ -77,165 +92,107 @@ function UI() {
               {/* Isi materi pembelajaran */}
               {lessonToShow === "Pengertian & Komponen Utama UI" && (
                 <div>
-                  <h4>**Apa itu User Experience**</h4>
+                  <h4>**Apa itu User Interface**</h4>
                   <div>
                     <p>
-                      - UX merupakan keseluruhan interaksi pengguna dengan
-                      produk atau sistem, termasuk aspek-aspek fungsional,
-                      estetika, dan emosional.{" "}
-                    </p>
-                    <p>
-                      - UX mencakup bagaimana pengguna merasa, berpikir, dan
-                      bertindak saat menggunakan produk atau sistem tersebut.
+                      User Interface (UI) merujuk pada segala sesuatu yang
+                      memungkinkan pengguna berinteraksi dengan sebuah produk
+                      atau sistem. UI merupakan titik kontak utama antara
+                      pengguna dan teknologi, dan memiliki peran penting dalam
+                      menentukan kualitas pengalaman pengguna.
                     </p>
                   </div>
 
-                  <h4>**Komponen-komponen Utama UX**</h4>
+                  <h4>**Komponen-komponen Utama UI**</h4>
                   <div>
                     <p>
-                      - Kegunaan (Usability): Seberapa mudah produk dapat
-                      digunakan oleh pengguna untuk mencapai tujuan mereka.
-                    </p>
-                    <p>
-                      - Kesenangan (Desirability): Seberapa menarik dan
-                      menyenangkan pengalaman menggunakan produk tersebut.
-                    </p>
-                    <p>
-                      - Kepercayaan (Credibility): Seberapa dapat dipercaya dan
-                      aman produk dalam penggunaan pengguna.
+                      UI merupakan antarmuka antara pengguna dan sistem yang
+                      memungkinkan pengguna untuk berinteraksi dengan aplikasi
+                      melalui elemen-elemen visual seperti tombol, menu, input
+                      fields, gambar, cards, icons dan lain sebagainya.
                     </p>
                   </div>
                 </div>
               )}
               {lessonToShow === "Buttons & Input Fields" && (
                 <div>
-                  <h4>**Pengantar tentang UX Research**</h4>
+                  <h4>**Tombol (Buttons)**</h4>
                   <div>
                     <p>
-                      - Definisi UX Research: Proses memahami pengguna melalui
-                      pengumpulan data untuk meningkatkan desain produk.
+                      - Merepresentasikan tindakan yang dapat dilakukan oleh
+                      pengguna, seperti "Kirim", "Simpan", atau "Batal".
                     </p>
                     <p>
-                      - Tujuan UX Research: Mengidentifikasi masalah, memahami
-                      kebutuhan pengguna, dan menguji desain untuk pengalaman
-                      pengguna yang lebih baik.
+                      - Penting untuk memberikan tombol dengan label yang jelas
+                      dan mudah dimengerti.
                     </p>
                   </div>
 
-                  <h4>**Metode-metode UX Research**</h4>
+                  <h4>**Kolom Input (Input Fields)**</h4>
                   <div>
                     <p>
-                      - Observasi Pengguna: Melihat langsung bagaimana pengguna
-                      berinteraksi dengan produk.
+                      - Memungkinkan pengguna untuk memasukkan teks, angka, atau
+                      data lainnya.
                     </p>
                     <p>
                       {" "}
-                      - Wawancara Pengguna: Mendengarkan pengguna untuk memahami
-                      kebutuhan dan masalah mereka.
-                    </p>
-                    <p>
-                      - Survei dan Kuesioner: Mengumpulkan data dari sejumlah
-                      besar responden untuk menganalisis tren.
-                    </p>
-                    <p>
-                      - A/B Testing: Membandingkan dua versi produk untuk
-                      menentukan yang lebih efektif.
-                    </p>
-                    <p>
-                      {" "}
-                      - Card Sorting: Mengorganisir informasi produk dengan
-                      melibatkan pengguna.
+                      - Berbagai jenis kolom input termasuk teks, angka,
+                      tanggal, dan area teks multi-baris.
                     </p>
                   </div>
                 </div>
               )}
               {lessonToShow === "Dropdown Menu & Radio Buttons" && (
-                <p>
-                  <h4>**Tahapan dalam Proses UX Research**</h4>
+                <div>
+                  <h4>Menu Drop-down (Dropdown Menus)</h4>
                   <div>
                     <p>
-                      - Perencanaan Penelitian: Menetapkan tujuan,
-                      mengidentifikasi peserta, dan merancang metode penelitian.
+                      - Menyediakan pilihan yang dapat dipilih oleh pengguna
+                      dengan cara mengklik atau mengarahkan kursor ke menu.
                     </p>
                     <p>
-                      - Pengumpulan Data: Melaksanakan metode penelitian yang
-                      dipilih.
-                    </p>
-                    <p>
-                      - Analisis Data: Menganalisis data yang terkumpul untuk
-                      mengidentifikasi pola dan tren.
-                    </p>
-                    <p>
-                      {" "}
-                      - Interpretasi dan Penarikan Kesimpulan: Mengaitkan temuan
-                      dengan kebutuhan pengguna dan desain produk.
-                    </p>
-                    <p>
-                      {" "}
-                      - Implementasi Hasil Penelitian: Mengintegrasikan temuan
-                      penelitian ke dalam proses desain produk.
+                      - Berguna untuk menyajikan opsi yang luas dalam ruang yang
+                      terbatas.
                     </p>
                   </div>
 
-                  <h4>**Manfaat UX Research**</h4>
+                  <h4>**Tombol Radio(Radio Buttons)**</h4>
                   <div>
                     <p>
-                      - Memahami pengguna: Mendapatkan wawasan mendalam tentang
-                      kebutuhan dan preferensi pengguna.
+                      - Digunakan untuk memungkinkan pengguna memilih satu atau
+                      beberapa opsi dari beberapa pilihan.
                     </p>
                     <p>
-                      - Mengurangi risiko: Menghindari pengembangan produk yang
-                      tidak sesuai dengan harapan pengguna.
-                    </p>
-                    <p>
-                      - Meningkatkan kepuasan pengguna: Menghasilkan produk yang
-                      lebih intuitif dan mudah digunakan.
+                      - Checkbox memungkinkan pengguna memilih beberapa opsi,
+                      sementara tombol radio memungkinkan pemilihan tunggal.
                     </p>
                   </div>
-
-                  <h4>**Implementasi UX Research**</h4>
-                  <div>
-                    <p>
-                      - Menerjemahkan Temuan menjadi Aksi: Mengubah temuan
-                      penelitian menjadi rekomendasi desain konkret.
-                    </p>
-                    <p>
-                      - Iterasi Produk: Menerapkan perubahan desain berdasarkan
-                      umpan balik pengguna untuk meningkatkan pengalaman
-                      pengguna.
-                    </p>
-                  </div>
-                </p>
+                </div>
               )}
 
               {lessonToShow === "Lists & Icons" && (
                 <p>
-                  <h4>**Manfaat UX Research**</h4>
+                  <h4>**Daftar (Lists)**</h4>
                   <div>
                     <p>
-                      - Memahami pengguna: Mendapatkan wawasan mendalam tentang
-                      kebutuhan dan preferensi pengguna.
+                      - Menampilkan sejumlah item dalam urutan tertentu, seperti
+                      daftar kontak atau hasil pencarian.
                     </p>
                     <p>
-                      - Mengurangi risiko: Menghindari pengembangan produk yang
-                      tidak sesuai dengan harapan pengguna.
-                    </p>
-                    <p>
-                      - Meningkatkan kepuasan pengguna: Menghasilkan produk yang
-                      lebih intuitif dan mudah digunakan.
+                      - Memberikan navigasi dan visibilitas yang baik terhadap
+                      item-item yang ditampilkan.
                     </p>
                   </div>
 
-                  <h4>**Implementasi UX Research**</h4>
+                  <h4>**Ikon (Icons)**</h4>
                   <div>
                     <p>
-                      - Menerjemahkan Temuan menjadi Aksi: Mengubah temuan
-                      penelitian menjadi rekomendasi desain konkret.
+                      - Merepresentasikan fungsi atau tindakan dengan simbol
+                      visual.
                     </p>
                     <p>
-                      - Iterasi Produk: Menerapkan perubahan desain berdasarkan
-                      umpan balik pengguna untuk meningkatkan pengalaman
-                      pengguna.
+                      - Berguna untuk menghemat ruang dan menyediakan informasi
+                      dengan cara yang lebih cepat.
                     </p>
                   </div>
                 </p>
@@ -243,70 +200,65 @@ function UI() {
 
               {lessonToShow === "Navigation Bar & Cards" && (
                 <p>
-                  <h4>**Manfaat UX Research**</h4>
+                  <h4>**Bilah Navigasi (Navigation Bars)**</h4>
                   <div>
                     <p>
-                      - Memahami pengguna: Mendapatkan wawasan mendalam tentang
-                      kebutuhan dan preferensi pengguna.
+                      - Memberikan akses cepat ke berbagai bagian atau fitur
+                      dalam sebuah aplikasi atau situs web.
                     </p>
                     <p>
-                      - Mengurangi risiko: Menghindari pengembangan produk yang
-                      tidak sesuai dengan harapan pengguna.
-                    </p>
-                    <p>
-                      - Meningkatkan kepuasan pengguna: Menghasilkan produk yang
-                      lebih intuitif dan mudah digunakan.
+                      - Penting untuk menjaga konsistensi dalam navigasi untuk
+                      memudahkan pengguna dalam berpindah halaman.
                     </p>
                   </div>
 
-                  <h4>**Implementasi UX Research**</h4>
+                  <h4>**Kartu (Cards)**</h4>
                   <div>
                     <p>
-                      - Menerjemahkan Temuan menjadi Aksi: Mengubah temuan
-                      penelitian menjadi rekomendasi desain konkret.
+                      - Menyajikan informasi atau konten dalam unit terpisah
+                      dengan judul, gambar, dan teks.
                     </p>
                     <p>
-                      - Iterasi Produk: Menerapkan perubahan desain berdasarkan
-                      umpan balik pengguna untuk meningkatkan pengalaman
-                      pengguna.
+                      - Berguna untuk membagi konten menjadi bagian-bagian yang
+                      lebih terorganisir dan mudah dinavigasi.
                     </p>
                   </div>
                 </p>
               )}
               {lessonToShow === "Alerts & Checkboxes" && (
                 <p>
-                  <h4>**Manfaat UX Research**</h4>
+                  <h4>**Pemberitahuan (Alerts)**</h4>
                   <div>
                     <p>
-                      - Memahami pengguna: Mendapatkan wawasan mendalam tentang
-                      kebutuhan dan preferensi pengguna.
+                      - Memberikan informasi penting kepada pengguna, seperti
+                      kesalahan validasi formulir atau konfirmasi tindakan.
                     </p>
                     <p>
-                      - Mengurangi risiko: Menghindari pengembangan produk yang
-                      tidak sesuai dengan harapan pengguna.
-                    </p>
-                    <p>
-                      - Meningkatkan kepuasan pengguna: Menghasilkan produk yang
-                      lebih intuitif dan mudah digunakan.
+                      - Perlu diperhatikan agar pemberitahuan tidak mengganggu
+                      pengalaman pengguna yang sedang berlangsung.
                     </p>
                   </div>
 
-                  <h4>**Implementasi UX Research**</h4>
+                  <h4>**Kotak Centang (Checkboxes)</h4>
                   <div>
                     <p>
-                      - Menerjemahkan Temuan menjadi Aksi: Mengubah temuan
-                      penelitian menjadi rekomendasi desain konkret.
+                      - Digunakan untuk memungkinkan pengguna memilih satu atau
+                      beberapa opsi dari beberapa pilihan.
                     </p>
                     <p>
-                      - Iterasi Produk: Menerapkan perubahan desain berdasarkan
-                      umpan balik pengguna untuk meningkatkan pengalaman
-                      pengguna.
+                      - Checkbox memungkinkan pengguna memilih beberapa opsi,
+                      sementara tombol radio memungkinkan pemilihan tunggal.
                     </p>
                   </div>
                 </p>
               )}
             </div>
           )}
+
+          <div>
+            <br />
+            <br />
+          </div>
         </div>
       </div>
     </div>

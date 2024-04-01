@@ -38,6 +38,8 @@ const Login = () => {
       })
       .catch((err) => {
         setError(err);
+      .catch((err) => {
+        setError(err);
       });
   }
 

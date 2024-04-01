@@ -1,38 +1,48 @@
 // import loginBg from "../assets/LoginBg.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import FORMS, { LOGIN_FORMS } from "../helpers/forms";
+import { login } from "../service/auth";
+import useAuth from "../store/useAuth";
+import { PATH } from "../helpers/path";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { setUser } = useAuth((state) => state);
+  const [formInput, setFormInput] = useState({
+    [FORMS.AUTH.EMAIL.NAME]: "",
+    [FORMS.AUTH.PASSWORD.NAME]: "",
+  });
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  function handleChange({ target: { name, value } }) {
+    setFormInput((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setError("");
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    const userloginData = { email, password };
-    console.log(userloginData);
-    axios
-      .post("http://localhost:5000/login", userloginData)
-      .then((result) => {
-        console.log(result);
-        if (result.data === "Success") {
-          navigate("/quiz");
-        }
+
+    await login(
+      formInput[FORMS.AUTH.EMAIL.NAME],
+      formInput[FORMS.AUTH.PASSWORD.NAME]
+    )
+      .then((res) => {
+        setUser(res);
+        navigate(PATH.DASHBOARD);
       })
-      .catch((error) => {
-        if (error.response && error.response.status === 401) {
-          setError("Invalid Email or Password");
-        } else {
-          setError("terjadi kesalahan server");
-        }
+      .catch((err) => {
+        setError(err);
       });
-  };
+  }
 
   return (
-    <div class="flex min-w-full min-h-full flex-col justify-center px-6 py-12 lg:px-8 hero-bg mt-20">
+    <div class="flex min-w-full grow flex-col justify-center px-6 py-12 lg:px-8 hero-bg mt-20">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <p className="text-3xl font-bold text-[#5830B2] text-center">LOGIN</p>
         <h2 class="mt-10 text-center text-lg font-bold leading-9 tracking-tight text-gray-900">
@@ -44,79 +54,53 @@ const Login = () => {
       </div>
 
       <div class="mt-10 mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" action="#" method="POST">
-          <div>
-            <label
-              for="email"
-              class="block text-sm leading-6 text-gray-900 font-bold text-left"
-            >
-              Email address
-            </label>
-            <div class="mt-2">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                class="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between">
+        <form onSubmit={handleSubmit} class="space-y-6" action="#">
+          {LOGIN_FORMS.map((item) => (
+            <div key={item.name}>
               <label
-                for="password"
-                class="block text-sm font-bold leading-6 text-gray-900"
+                for={item.name}
+                class="block text-sm leading-6 text-gray-900 font-bold text-left"
               >
-                Password
+                {item.label}
               </label>
-              <div class="text-sm">
-                {/* <a
-                  href="#"
-                  class="font-semibold text-[#6446A5] hover:text-indigo-500"
-                >
-                  Forgot password?
-                </a> */}
+              <div class="mt-2">
+                <input
+                  id={item.name}
+                  name={item.name}
+                  type={
+                    item.name === FORMS.AUTH.PASSWORD.NAME
+                      ? "password"
+                      : "email"
+                  }
+                  autocomplete={item.name}
+                  value={formInput[item.name]}
+                  onChange={handleChange}
+                  required
+                  class="block w-full rounded-md border-2 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
               </div>
             </div>
-            <div class="mt-2">
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autocomplete="current-password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                class="block w-full rounded-md border-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          ))}
+
+          {error && <div style={{ color: "red" }}>{error}</div>}
           <div>
-            <Link
-              // onClick={handleSubmit}
-              to={"/quiz"}
+            <button
               type="submit"
               class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Sign in
-            </Link>
+            </button>
           </div>
         </form>
 
         <p class="mt-10 text-center text-sm text-black">
           Anda belum mempunyai akun?
-          <a
-            href="#"
+          <Link
+            to={"/" + PATH.REGISTER}
             class="font-semibold leading-6 text-[#443091] hover:text-indigo-500 no-underline ml-1"
           >
             Daftar Disini
-          </a>
+          </Link>
         </p>
       </div>
       {/* <img

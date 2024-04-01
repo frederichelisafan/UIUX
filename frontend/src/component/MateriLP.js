@@ -9,7 +9,7 @@ const MateriLP = () => {
 
   return (
     <>
-      <section className="pb-12 lg:pb-[90px] dark:bg-dark z-20 ">
+      <section className="pb-12 lg:pb-[90px] dark:bg-dark z-20">
         <div className="mx-auto">
           <div className="flex flex-wrap mx-4">
             <div className="w-full px-4">
@@ -25,7 +25,7 @@ const MateriLP = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap mx-4">
             <PortfolioCard
               ImageHref="https://i.ibb.co/64WfFPt/image-01.jpg"
               category="1"

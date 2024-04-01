@@ -6,7 +6,7 @@ import Expert from "../component/Expert.js";
 
 const Landingpage = () => {
   return (
-    <div className="landing-page">
+    <div className="landing-page relative">
       <Navbar />
       <Home />
       <MateriLP />

@@ -2,7 +2,7 @@ import React from "react";
 
 const Welcome = () => {
   return (
-    <div className="container mt-40">
+    <div className="container mt-40 grow">
       <div>
         <h1 className="text-[#443091] text-center font-raleway font-bold">
           HELLO &

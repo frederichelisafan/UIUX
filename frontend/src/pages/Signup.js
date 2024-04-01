@@ -3,9 +3,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FORMS, { REGISTER_FORMS } from "../helpers/forms";
 import { register } from "../service/auth";
+import useAuth from "../store/useAuth";
+import { PATH } from "../helpers/path";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const { setUser } = useAuth((state) => state);
   const [formInput, setFormInput] = useState({
     [FORMS.AUTH.USERNAME.NAME]: "",
     [FORMS.AUTH.EMAIL.NAME]: "",
@@ -31,7 +34,7 @@ const Signup = () => {
       formInput[FORMS.AUTH.PASSWORD.NAME]
     )
       .then((res) => {
-        console.log(res);
+        navigate("/" + PATH.LOGIN);
       })
       .catch((err) => {
         setError(err);

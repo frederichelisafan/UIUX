@@ -1,7 +1,6 @@
 // import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { Fragment } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Landingpage from "./pages/Landingpage";
 
 import Loginpage from "./pages/Loginpage";

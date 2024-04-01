@@ -27,6 +27,9 @@ const NavbarMain = () => {
           <Link to={PATH.LEADERBOARD} className="font-semibold text-gray-700">
             Leaderboard
           </Link>
+          <Link to={PATH.PROFILE} className="font-semibold text-gray-700">
+            Profile
+          </Link>
           <button
             onClick={handleLogout}
             className="font-semibold  bg-red-500 px-4 py-2 border rounded"

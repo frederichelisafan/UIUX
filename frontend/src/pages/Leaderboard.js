@@ -1,6 +1,6 @@
 const Leaderboard = () => {
   return (
-    <>
+    <div className="grow">
       <p className="mt-40 text-[#443091] mb-3 text-3xl font-bold font-inter">
         Leaderboard!
       </p>
@@ -188,7 +188,7 @@ const Leaderboard = () => {
           4750 <br /> <span className="font-normal">Points</span>
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

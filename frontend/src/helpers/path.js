@@ -8,6 +8,7 @@ export const PATH = {
     MATERI: "materi",
     LEADERBOARD: "leaderboard",
     PROFILE: "profile",
+    PLAY_QUIZ: "play-quiz",
     NOT_FOUND: "not-found"
   };
   

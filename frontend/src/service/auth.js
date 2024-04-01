@@ -21,6 +21,19 @@ async function register(username, email, password) {
         await setDoc(docRef, {
           username,
           email,
+          level: 1,
+          points: {
+            ui: 0,
+            ux: 0,
+            simplicity: 0,
+            clarity: 0,
+            clearFeedback: 0,
+            flexibility: 0,
+            aesthetic: 0,
+            clearFunctionality: 0,
+            consistency: 0,
+          },
+          uid: res.user.uid,
         })
           .then(() => resolve("success"))
           .catch((err) => {

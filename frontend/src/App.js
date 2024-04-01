@@ -27,6 +27,7 @@ import Aesthetic from "./materi/Aesthetic.js";
 import { PATH } from "./helpers/path.js";
 import LandingLayouts from "./layouts/LandingLayouts.jsx";
 import DashboardLayouts from "./layouts/DashboardLayouts.jsx";
+import PlayQuiz from "./pages/PlayQuiz.js";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path={PATH.QUIZ} Component={PlayQuizMain} />
           <Route path={PATH.LEADERBOARD} Component={Leaderboard} />
           <Route path={PATH.PROFILE} Component={Profile} />
+          <Route path={PATH.PLAY_QUIZ} Component={PlayQuiz} />
           <Route path="/materi/UI" Component={UI} />
           <Route path="/materi/UX" Component={UX} />
           <Route path="/materi/Consistency" Component={Consistency} />

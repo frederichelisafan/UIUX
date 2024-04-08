@@ -1790,54 +1790,63 @@ export const SOAL_QUIZ = {
     label: "UI",
     qna: questions.UIquestions,
     level: 1,
+    wave_id: 0
   },
   ux: {
     name: "ux",
     label: "UX",
     qna: questions.UXquestions,
     level: 2,
+    wave_id: 1
   },
   simplicity: {
     name: "simplicity",
     label: "Simplicity",
     qna: questions.Simplicityquestions,
     level: 3,
+    wave_id: 2
   },
   clarity: {
     name: "clarity",
     label: "Clarity",
     qna: questions.Clarityquestions,
     level: 4,
+    wave_id: 3
   },
   clearFeedback: {
     name: "clearFeedback",
     label: "Clear Feedback",
     qna: questions.ClearFeedbackquestions,
     level: 5,
+    wave_id: 4
   },
   flexibility: {
     name: "flexibility",
     label: "Flexibility",
     qna: questions.Flexibilityquestions,
     level: 6,
+    wave_id: 5
   },
   aesthetic: {
     name: "aesthetic",
     label: "Aesthetic",
     qna: questions.Aestheticquestions,
     level: 7,
+    wave_id: 6
   },
   clearFunctionality: {
     name: "clearFunctionality",
     label: "Clear Functionality",
     qna: questions.ClearFunctionalityquestions,
     level: 8,
+    wave_id: 7
   },
   consistency: {
     name: "consistency",
     label: "Consistency",
     qna: questions.Consistencyquestions,
     level: 9,
+    wave_id: 5
   },
 };
 

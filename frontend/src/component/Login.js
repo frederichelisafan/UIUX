@@ -34,7 +34,7 @@ const Login = () => {
     )
       .then((res) => {
         setUser(res);
-        navigate(PATH.DASHBOARD);
+        navigate("/" + PATH.DASHBOARD);
       })
       .catch((err) => {
         setError(err);

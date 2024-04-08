@@ -5,13 +5,14 @@ import {
 } from "firebase/auth";
 import { AUTH, DB } from "../config/firebase";
 import { setDoc, doc, getDoc, collection, getDocs } from "firebase/firestore";
+import transformErrorMessage from "../helpers/transformErrorMessage";
 
 async function register(username, email, password) {
   return await new Promise(async (resolve, reject) => {
     await getAllUsers().then((res) => {
       const usernameExist = res.find((x) => x.username === username);
       if (usernameExist) {
-        reject("auth/username already exist");
+        reject("username already exist");
       }
     });
 
@@ -40,14 +41,7 @@ async function register(username, email, password) {
             reject(err);
           });
       })
-      .catch((err) => {
-        reject(
-          err.message
-            .replace("Firebase: Error (", "")
-            .replace(").", "")
-            .replaceAll("-", " ")
-        );
-      });
+      .catch((err) => reject(transformErrorMessage(err.message)));
   });
 }
 
@@ -58,14 +52,7 @@ async function login(email, password) {
         const result = await getUser(AUTH.currentUser.uid);
         resolve({ ...result.data(), uid: AUTH.currentUser.uid });
       })
-      .catch((err) => {
-        reject(
-          err.message
-            .replace("Firebase: Error (", "")
-            .replace(").", "")
-            .replaceAll("-", " ")
-        );
-      });
+      .catch((err) => reject(transformErrorMessage(err.message)));
   });
 }
 

@@ -1,6 +1,9 @@
 import React from "react";
+import useAuth from "../store/useAuth";
 
 const Welcome = () => {
+  const { username } = useAuth(state => state.user)
+
   return (
     <div className="container mt-40 grow">
       <div>
@@ -8,7 +11,7 @@ const Welcome = () => {
           HELLO &
         </h1>
         <h1 className="text-center text-[#443091] font-raleway font-bold">
-          WELCOME <span className="text-[#B50096]">USERNAME.</span>
+          WELCOME <span className="text-[#B50096]">{username}.</span>
         </h1>
         <p className="text-center mt-3 w-[600px] mx-auto">
           Website pembelajaran UI/UX adalah platform digital yang dirancang

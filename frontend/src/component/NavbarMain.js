@@ -13,9 +13,14 @@ const NavbarMain = () => {
     logout();
     navigate(PATH.BASE);
   }
+
+  function toHome() {
+    navigate(PATH.DASHBOARD);
+  }
+
   return (
     <nav className="flex justify-between px-20 py-4 items-center bg-white shadow">
-      <img src={logo} alt="logo ui" />
+      <img src={logo} alt="logo ui" onClick={toHome} className="cursor-pointer" />
       <div className="flex items-center">
         <ul className="flex items-center space-x-6 my-auto font-raleway cursor-pointer">
           <Link to={PATH.QUIZ} className="font-semibold text-gray-700">

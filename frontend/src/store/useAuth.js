@@ -5,7 +5,7 @@ const initialUser = {
   uid: "",
   email: "",
   username: "",
-  level: "",
+  level: 0,
   points: {
     ui: 0,
     ux: 0,
@@ -21,25 +21,20 @@ const initialUser = {
 
 const authentication = (set) => ({
   user: { ...initialUser },
-  setUser: ({ uid, email, username }) =>
-    set((user) => ({
-      user: {
-        ...user,
-        uid,
-        email,
-        username,
-      },
+  setUser: (userData) =>
+    set(() => ({
+      user: { ...userData },
     })),
-  removeUser: () => set({ user: initialUser }),
-  setLevel: () =>
-    set((user) => ({
+  removeUser: () => set({ user: { ...initialUser } }),
+  setLevel: (level) =>
+    set(({ user }) => ({
       user: {
         ...user,
-        level: "",
+        level,
       },
     })),
   setPoints: (keyPoint, point) =>
-    set((user) => ({
+    set(({ user }) => ({
       ...user,
       points: {
         ...user.points,

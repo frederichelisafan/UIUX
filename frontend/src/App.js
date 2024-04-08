@@ -28,6 +28,8 @@ import { PATH } from "./helpers/path.js";
 import LandingLayouts from "./layouts/LandingLayouts.jsx";
 import DashboardLayouts from "./layouts/DashboardLayouts.jsx";
 import PlayQuiz from "./pages/PlayQuiz.js";
+import Quiz from "./pages/Quiz.js";
+import NotFound from "./pages/NotFound.js";
 
 function App() {
   return (
@@ -47,7 +49,8 @@ function App() {
         <Route path={PATH.BASE} Component={DashboardLayouts}>
           <Route path={PATH.DASHBOARD} Component={Welcome} />
           <Route path={PATH.MATERI} Component={Materi} />
-          <Route path={PATH.QUIZ} Component={PlayQuizMain} />
+          {/* <Route path={PATH.QUIZ} Component={PlayQuizMain} /> */}
+          <Route path={PATH.QUIZ} Component={Quiz} />
           <Route path={PATH.LEADERBOARD} Component={Leaderboard} />
           <Route path={PATH.PROFILE} Component={Profile} />
           <Route path={PATH.PLAY_QUIZ} Component={PlayQuiz} />
@@ -64,6 +67,8 @@ function App() {
             Component={<ClearFunctionality />}
           />
         </Route>
+
+        {/* <Route path="*" Component={NotFound} /> */}
       </Routes>
     </>
   );

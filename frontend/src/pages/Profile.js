@@ -8,6 +8,10 @@ const Profile = () => {
     (val) => user.points[val.name] >= CONSTANTS.MINIMUM_POINTS
   );
 
+  const totalPoints = Object.values(user.points).reduce(
+    (prev, curr) => prev + curr
+  );
+
   // console.log(badge);
 
   return (
@@ -29,7 +33,7 @@ const Profile = () => {
             <p className="text-[#818181] text-xs md:text-left">{user.email}</p>
             <p className="text-lg font-semibold mb-0 md:text-left">Statistik</p>
             <p className="dark:text-gray-600 md:text-left">
-              Total Points: 1000
+              Total Points: {totalPoints}
             </p>
           </div>
         </div>

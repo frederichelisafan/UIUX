@@ -1,3 +1,13 @@
+import Badge1 from "../assets/badge/badge1.png";
+import Badge2 from "../assets/badge/badge2.png";
+import Badge3 from "../assets/badge/badge3.png";
+import Badge4 from "../assets/badge/badge4.png";
+import Badge5 from "../assets/badge/badge5.png";
+import Badge6 from "../assets/badge/badge6.png";
+import Badge7 from "../assets/badge/badge7.png";
+import Badge8 from "../assets/badge/badge8.png";
+import Badge9 from "../assets/badge/badge9.png";
+
 const questions = {
   UIquestions: [
     {
@@ -191,7 +201,7 @@ const questions = {
       questionText: "Apa yang dimaksud dengan UI Animation?",
       answerOptions: [
         {
-          answerText: "Animasi yang digunakan untuk menghibur pengguna",
+          answerText: "Animasi yang digunakan untuk menghibur pengguna.",
           isCorrect: false,
         },
         {
@@ -1788,65 +1798,115 @@ export const SOAL_QUIZ = {
   ui: {
     name: "ui",
     label: "UI",
-    qna: questions.UIquestions,
+    qna: questions.UIquestions.sort(() => Math.random() - 0.5).map((item) => ({
+      ...item,
+      answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+    })),
     level: 1,
-    wave_id: 0
+    wave_id: 0,
+    badge: Badge1,
   },
   ux: {
     name: "ux",
     label: "UX",
-    qna: questions.UXquestions,
+    qna: questions.UXquestions.sort(() => Math.random() - 0.5).map((item) => ({
+      ...item,
+      answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+    })),
     level: 2,
-    wave_id: 1
+    wave_id: 1,
+    badge: Badge2,
   },
   simplicity: {
     name: "simplicity",
     label: "Simplicity",
-    qna: questions.Simplicityquestions,
+    qna: questions.Simplicityquestions.sort(() => Math.random() - 0.5).map(
+      (item) => ({
+        ...item,
+        answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+      })
+    ),
     level: 3,
-    wave_id: 2
+    wave_id: 2,
+    badge: Badge3,
   },
   clarity: {
     name: "clarity",
     label: "Clarity",
-    qna: questions.Clarityquestions,
+    qna: questions.Clarityquestions.sort(() => Math.random() - 0.5).map(
+      (item) => ({
+        ...item,
+        answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+      })
+    ),
     level: 4,
-    wave_id: 3
+    wave_id: 3,
+    badge: Badge4,
   },
   clearFeedback: {
     name: "clearFeedback",
     label: "Clear Feedback",
-    qna: questions.ClearFeedbackquestions,
+    qna: questions.ClearFeedbackquestions.sort(() => Math.random() - 0.5).map(
+      (item) => ({
+        ...item,
+        answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+      })
+    ),
     level: 5,
-    wave_id: 4
+    wave_id: 4,
+    badge: Badge5,
   },
   flexibility: {
     name: "flexibility",
     label: "Flexibility",
-    qna: questions.Flexibilityquestions,
+    qna: questions.Flexibilityquestions.sort(() => Math.random() - 0.5).map(
+      (item) => ({
+        ...item,
+        answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+      })
+    ),
     level: 6,
-    wave_id: 5
+    wave_id: 5,
+    badge: Badge6,
   },
   aesthetic: {
     name: "aesthetic",
     label: "Aesthetic",
-    qna: questions.Aestheticquestions,
+    qna: questions.Aestheticquestions.sort(() => Math.random() - 0.5).map(
+      (item) => ({
+        ...item,
+        answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+      })
+    ),
     level: 7,
-    wave_id: 6
+    wave_id: 6,
+    badge: Badge7,
   },
   clearFunctionality: {
     name: "clearFunctionality",
     label: "Clear Functionality",
-    qna: questions.ClearFunctionalityquestions,
+    qna: questions.ClearFunctionalityquestions.sort(
+      () => Math.random() - 0.5
+    ).map((item) => ({
+      ...item,
+      answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+    })),
     level: 8,
-    wave_id: 7
+    wave_id: 7,
+    badge: Badge8,
   },
   consistency: {
     name: "consistency",
     label: "Consistency",
-    qna: questions.Consistencyquestions,
+    qna: questions.Consistencyquestions.sort(() => Math.random() - 0.5).map(
+      (item) => ({
+        ...item,
+        answerOptions: item.answerOptions.sort(() => Math.random() - 0.5),
+      })
+    ),
     level: 9,
-    wave_id: 5
+    wave_id: 5,
+    badge: Badge9,
   },
 };
 

@@ -28,10 +28,8 @@ const authentication = (set) => ({
   removeUser: () => set({ user: { ...initialUser } }),
   setLevel: (level) =>
     set(({ user }) => ({
-      user: {
-        ...user,
-        level,
-      },
+      ...user,
+      level,
     })),
   setPoints: (keyPoint, point) =>
     set(({ user }) => ({

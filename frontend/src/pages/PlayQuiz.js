@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import cross from "../assets/cross.png";
 import checked from "../assets/checked.png";
 import Swal from "sweetalert2/dist/sweetalert2.js";
@@ -41,7 +41,9 @@ const PlayQuiz = () => {
   }, [counter, counterFlag]);
 
   const [score, setScore] = useState(0);
-  const [point, setPoint] = useState(0);
+  const point = useMemo(() => {
+    return (score / SOAL_QUIZ[questions_name].qna.length) * 1000;
+  }, [score, questions_name]);
   const [currentindex, setCurrentIndex] = useState(0);
   const [quizfinished, setQuizFinished] = useState(false);
   const [submit, setSubmit] = useState(false);
@@ -54,8 +56,6 @@ const PlayQuiz = () => {
 
     if (a.isCorrect) {
       setScore((value) => value + 1);
-
-      setPoint((p) => p + 100);
     }
     setCounterFlag(true);
     setSubmit(true);
@@ -69,19 +69,20 @@ const PlayQuiz = () => {
   };
 
   const nextQuestion = async () => {
-    setCounterFlag(false);
+    setCounterFlag(() => false);
     if (currentindex === SOAL_QUIZ[questions_name].qna.length - 1) {
       setQuizFinished(true);
+      setCounterFlag(() => true);
 
-      if (score >= SOAL_QUIZ[questions_name].qna.length) {
+      if (point >= minimum_points) {
         // toast("test");
         Swal.fire({
           title: "Sweet!",
-          text: "Modal with a custom image.",
-          // imageUrl: {},
-          imageWidth: 400,
+          text: "Kamu menyelesaikan quis dengan nilai yang bagus",
+          imageUrl: checked,
+          imageWidth: 200,
           imageHeight: 200,
-          // imageAlt: "Custom image",
+          imageAlt: "checked",
         });
 
         if (point >= userPoint[questions_name]) {
@@ -137,9 +138,7 @@ const PlayQuiz = () => {
         {quizfinished ? (
           <div className="text-center px-4 py-8">
             <img
-              src={
-                score < SOAL_QUIZ[questions_name].qna.length ? cross : checked
-              }
+              src={point >= minimum_points ? checked : cross}
               className="w-14 m-auto"
               alt=""
             />

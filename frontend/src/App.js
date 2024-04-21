@@ -54,17 +54,17 @@ function App() {
           <Route path={PATH.LEADERBOARD} Component={Leaderboard} />
           <Route path={PATH.PROFILE} Component={Profile} />
           <Route path={PATH.PLAY_QUIZ} Component={PlayQuiz} />
-          <Route path="/materi/UI" Component={UI} />
-          <Route path="/materi/UX" Component={UX} />
-          <Route path="/materi/Consistency" Component={Consistency} />
-          <Route path="/materi/Simplicity" Component={Simplicity} />
-          <Route path="/materi/Clarity" Component={Clarity} />
-          <Route path="/materi/ClearFeedback" Component={ClearFeedback} />
-          <Route path="/materi/Flexibility" Component={Flexibility} />
-          <Route path="/materi/Aesthetic" Component={Aesthetic} />
+          <Route path="/materi/ui" Component={UI} />
+          <Route path="/materi/ux" Component={UX} />
+          <Route path="/materi/consistency" Component={Consistency} />
+          <Route path="/materi/simplicity" Component={Simplicity} />
+          <Route path="/materi/clarity" Component={Clarity} />
+          <Route path="/materi/clearFeedback" Component={ClearFeedback} />
+          <Route path="/materi/flexibility" Component={Flexibility} />
+          <Route path="/materi/aesthetic" Component={Aesthetic} />
           <Route
-            path="/materi/ClearFunctionality"
-            Component={<ClearFunctionality />}
+            path="/materi/clearFunctionality"
+            Component={ClearFunctionality}
           />
         </Route>
 

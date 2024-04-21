@@ -3,12 +3,22 @@ import { SOAL_NAMES, SOAL_QUIZ } from "../Data/SoalQuiz";
 import { useNavigate } from "react-router-dom";
 import { PATH } from "../helpers/path";
 import useAuth from "../store/useAuth";
+import DisableAlert from "../helpers/disabled-alert";
 
 const Quiz = () => {
   const navigate = useNavigate();
   const { level } = useAuth((state) => state.user);
 
   function letsPlay(param) {
+    if (level < SOAL_QUIZ[param].level) {
+      DisableAlert({
+        title: `Kamu belum bisa membuka quiz ${SOAL_QUIZ[param].label}`,
+        message: "Dapatkan point bagus pada quiz sebelumnya!",
+      });
+
+      return;
+    }
+
     navigate(`/${PATH.PLAY_QUIZ}?name=${param}`);
   }
 
@@ -63,7 +73,6 @@ const Quiz = () => {
                       <button
                         onClick={() => letsPlay(SOAL_QUIZ[soal].name)}
                         className="text-sm px-3 mt-8 rounded mx-auto bg-white text-[#523889]"
-                        disabled={level < SOAL_QUIZ[soal].level}
                       >
                         Start Quiz!
                       </button>

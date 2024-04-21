@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MateriContainer from "../component/MateriContainer";
 
 function Simplicity() {
   // State untuk melacak materi pembelajaran yang harus ditampilkan
@@ -10,24 +11,9 @@ function Simplicity() {
   };
 
   return (
-    <div>
-      <nav className="flex justify-between px-20 py-4 items-center bg-white shadow">
-        <img src="logoUI.png" alt="logo ui" />
-        <div className="flex items-center">
-          <ul className="flex items-center space-x-6 my-auto font-raleway cursor-pointer">
-            <li className="font-semibold text-gray-700">Quiz</li>
-            <li className="font-semibold text-gray-700">Materi</li>
-            <li className="font-semibold text-gray-700">Leaderboard</li>
-            <li className="font-semibold text-gray-700">Profile</li>
-            <li className="font-semibold text-white bg-red-500 px-4 py-2 border rounded">
-              Log out
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <div className="flex justify-center">
-        <div className="flex">
+    <MateriContainer>
+      <div className="flex justify-center gap-4">
+        <div className="flex shrink-0">
           <div className="container">
             <h2 className="mt-14 font-semibold text-lg">
               Konten belajar
@@ -59,7 +45,7 @@ function Simplicity() {
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="w-full">
           <h1 className="font-raleway mt-9 mb-3">Choose and Learn with Fun</h1>
           {lessonToShow === "Pengertian & Manfaat Simplicity" && (
             <div>
@@ -157,7 +143,7 @@ function Simplicity() {
       </div>
 
       {/* <Footer /> */}
-    </div>
+    </MateriContainer>
   );
 }
 

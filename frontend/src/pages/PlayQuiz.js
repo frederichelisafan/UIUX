@@ -10,11 +10,14 @@ import { useNavigate } from "react-router-dom";
 import { PATH } from "../helpers/path";
 import { updatePoints, updateLevel } from "../service";
 import useAuth from "../store/useAuth";
+import CONSTANTS from "../helpers/constants";
+import DisableAlert from "../helpers/disabled-alert";
+
+const minimum_points = CONSTANTS.MINIMUM_POINTS;
 
 const PlayQuiz = () => {
   const questions_name = useParams("name");
   const navigate = useNavigate();
-  const minimum_points = 700;
 
   function setGameState() {}
 
@@ -50,6 +53,22 @@ const PlayQuiz = () => {
   const [pilihanjawaban, setPilihanJawaban] = useState("");
 
   const handleCekJawaban = () => {
+    // if (submit) {
+    //   DisableAlert({
+    //     title: "Oops!",
+    //     message: "Kamu sudah submit jawabanmu, silahkan klik Next!",
+    //   });
+    //   return;
+    // }
+
+    if (!pilihanjawaban) {
+      DisableAlert({
+        title: "Oops!",
+        message: "Silahkan pilih jawabanmu terlebih dahulu!",
+      });
+      return;
+    }
+
     const a = SOAL_QUIZ[questions_name].qna[currentindex].answerOptions.find(
       (q) => q.answerText === pilihanjawaban
     );
@@ -69,31 +88,39 @@ const PlayQuiz = () => {
   };
 
   const nextQuestion = async () => {
+    if (!submit) {
+      DisableAlert({
+        title: "Oops!",
+        message: "Silahkan submit jawaban terlebih dahulu!",
+      });
+      return;
+    }
+
     setCounterFlag(() => false);
     if (currentindex === SOAL_QUIZ[questions_name].qna.length - 1) {
       setQuizFinished(true);
       setCounterFlag(() => true);
 
+      if (point >= userPoint[questions_name]) {
+        await updatePoints(questions_name, point, userPoint)
+          .then(() => {
+            setPoints(questions_name, point);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+
       if (point >= minimum_points) {
         // toast("test");
         Swal.fire({
-          title: "Sweet!",
-          text: "Kamu menyelesaikan quis dengan nilai yang bagus",
-          imageUrl: checked,
+          title: "Selamat!",
+          text: "Kamu menyelesaikan quis dengan nilai yang bagus, cek profil untuk melihat badge yang kamu dapat!",
+          imageUrl: SOAL_QUIZ[questions_name].badge,
           imageWidth: 200,
           imageHeight: 200,
           imageAlt: "checked",
         });
-
-        if (point >= userPoint[questions_name]) {
-          await updatePoints(questions_name, point, userPoint)
-            .then(() => {
-              setPoints(questions_name, point);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        }
 
         if (
           point >= minimum_points &&
@@ -219,7 +246,6 @@ const PlayQuiz = () => {
               <button
                 className="bg-primary mr-4 rounded-sm"
                 onClick={nextQuestion}
-                disabled={!submit}
               >
                 Next
               </button>
@@ -227,7 +253,6 @@ const PlayQuiz = () => {
               <button
                 className="bg-primary rounded-sm"
                 onClick={handleCekJawaban}
-                disabled={submit || !pilihanjawaban}
               >
                 Submit
               </button>

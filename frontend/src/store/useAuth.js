@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 const initialUser = {
   uid: "",
@@ -41,6 +41,11 @@ const authentication = (set) => ({
     })),
 });
 
-const useAuth = create(persist(authentication, { name: "auth" }));
+const useAuth = create(
+  persist(authentication, {
+    name: "auth",
+    storage: createJSONStorage(() => sessionStorage),
+  })
+);
 
 export default useAuth;

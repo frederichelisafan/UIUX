@@ -54,7 +54,7 @@ const Signup = () => {
       </div>
 
       <div className="xl:ml-32 sm:ml-0 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" action="#" method="POST">
+        <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST">
           {REGISTER_FORMS.map((item) => (
             <div key={item.name}>
               <label
@@ -88,7 +88,6 @@ const Signup = () => {
           <div>
             <button
               type="submit"
-              onClick={handleSubmit}
               className="flex w-full justify-center rounded-md bg-[#B50097] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Daftar

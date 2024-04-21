@@ -551,8 +551,7 @@ const questions = {
           isCorrect: true,
         },
         {
-          answerText:
-            "Pendekatan yang menekankan penggunaan elemen yang sederhana dan minimalis",
+          answerText: "Pendekatan yang menekankan penggunaan",
           isCorrect: false,
         },
       ],

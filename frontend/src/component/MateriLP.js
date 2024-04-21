@@ -101,10 +101,8 @@ const PortfolioCard = ({ showCard, category, ImageHref, title, desc }) => {
             <span className="mb-2 block text-sm font-bold text-[#6D51AB]">
               {category}
             </span>
-            <h3 className="text-dark dark:text-white mb-5 text-xl font-bold">
-              {title}
-            </h3>
-            <a className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-md border  border-[#D01FB3] dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:bg-[#f0f0f0] no-underline text-[#D01FB3]">
+            <h3 className="text-primary mb-5 text-xl font-bold">{title}</h3>
+            <a className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-md border  border-[#D01FB3] dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition no-underline text-[#D01FB3]">
               {desc}
             </a>
           </div>

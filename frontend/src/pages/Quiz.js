@@ -25,11 +25,11 @@ const Quiz = () => {
   return (
     <div className="mt-24">
       <div className="">
-        <p className=" text-[#523889] text-4xl mt-28 text-center font-bold">
+        <p className=" text-[#523889] text-4xl text-center font-bold mb-3">
           <span className="text-[#B50097]">Test Your Knowledge:</span> Join Our
           Exciting Quiz Challenge!
         </p>
-        <h4 className="text-[#523889] text-center mb-5  ">
+        <h4 className="text-[#523889] text-center mb-5 text-2xl">
           You'll have 15 second to answer each questions.
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-0">

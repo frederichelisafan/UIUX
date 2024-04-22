@@ -23,7 +23,7 @@ const NavbarMain = () => {
 
   return (
     <>
-      <p className="font-raleway text-4xl mt-40 font-bold text-[#523889] text-center">
+      <p className="font-raleway text-4xl mt-24 font-bold text-[#523889] text-center">
         <span className="text-[#B50097]">Ilmu adalah Kunci,</span> Ayo Mulai
         Petualanganmu!
       </p>

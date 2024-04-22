@@ -2,18 +2,18 @@ import React from "react";
 import useAuth from "../store/useAuth";
 
 const Welcome = () => {
-  const { username } = useAuth(state => state.user)
+  const { username } = useAuth((state) => state.user);
 
   return (
-    <div className="mt-40 grow">
+    <div className="grow mt-16">
       <div>
-        <h1 className="text-[#443091] text-center font-raleway font-bold text-3xl">
+        <h1 className="text-[#443091] text-center font-raleway font-bold text-4xl">
           HELLO &
         </h1>
-        <h1 className="text-center text-[#443091] font-raleway font-bold text-3xl">
+        <h1 className="text-center text-[#443091] font-raleway font-bold text-4xl">
           WELCOME <span className="text-[#B50096]">{username}.</span>
         </h1>
-        <p className="text-center mt-3 w-[600px] mx-auto text-xl">
+        <p className="text-center mt-3 w-[600px] mx-auto text-md">
           Website pembelajaran UI/UX adalah platform digital yang dirancang
           untuk membantu pengguna memahami prinsip-prinsip desain antarmuka
           pengguna (UI) dan pengalaman pengguna (UX) melalui serangkaian materi

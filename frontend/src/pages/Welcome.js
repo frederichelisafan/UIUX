@@ -20,7 +20,7 @@ const Welcome = () => {
           pembelajaran dan quiz. Aplikasi ini bertujuan untuk memberikan
           pemahaman mendalam tentang konsep-konsep desain UI/UX .
         </p>
-        <button className="bg-primary mx-auto rounded-3xl mb-14 mt-4">
+        <button className="bg-primary hover:bg-[#6747ab] mx-auto rounded-3xl mb-14 mt-4">
           Ayo Belajar
         </button>
       </div>

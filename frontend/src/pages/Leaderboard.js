@@ -35,7 +35,7 @@ const Leaderboard = () => {
 
   return (
     <div className="grow">
-      <p className="mt-40 text-[#443091] mb-3 text-3xl font-bold font-inter">
+      <p className="mt-24 text-[#443091] mb-10 text-4xl font-bold font-inter text-center">
         Leaderboard!
       </p>
       {/* Peringkat 2 */}

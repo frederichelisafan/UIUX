@@ -18,7 +18,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="grow p-6 sm:p-12 dark:text-gray-800 md:mx-40 rounded-xl mt-32">
+      <div className="grow p-6 sm:p-12 dark:text-gray-800 md:mx-40 rounded-xl">
         <div className="hero-bg py-10">
           <div className="flex flex-col md:space-y-0 md:space-x-6 justify-center md:flex-row">
             {/* <img
@@ -29,12 +29,12 @@ const Profile = () => {
             <BiSolidUserCircle className="self-center flex-shrink-0 w-32 h-32 border md:justify-self-start dark:bg-gray-500 dark:border-gray-300 dark:text-white rounded-full" />
             <div className="flex flex-col text-center">
               <h4
-                className="text-lg font-bold mb-0 mt-3 md:text-left"
+                className="text-xl font-bold mb-0 mt-3 md:text-left"
                 id="profile-name"
               >
                 {user.username}
               </h4>
-              <p className="text-[#818181] text-xs md:text-left">
+              <p className="text-[#818181] text-sm md:text-left">
                 {user.email}
               </p>
               <p className="text-lg font-semibold mb-0 md:text-left">

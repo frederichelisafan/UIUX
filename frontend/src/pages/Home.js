@@ -43,7 +43,7 @@ const Home = () => {
                 Mulai Sekarang
               </button>
               <button
-                className="inline-block rounded px-12 pt-4 pb-3.5 text-sm uppercase leading-normal transition duration-150 ease-in-out hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700  dark:hover:bg-opacity-60 no-underline text-[#FFFFFF] border font-bold bg-transparent"
+                className="inline-block rounded px-12 pt-4 pb-3.5 text-sm uppercase leading-normal transition duration-150 ease-in-out  hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 hover:bg-primary no-underline text-[#FFFFFF] font-bold bg-transparent"
                 data-te-ripple-init
                 data-te-ripple-color="light"
                 href="#!"

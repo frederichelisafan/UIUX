@@ -3,7 +3,7 @@ import { BiSolidUserCircle } from "react-icons/bi";
 
 const LeaderboardCard = ({ name, email, points, position }) => {
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative sm:mb-3 md:mb-0">
+    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow relative sm:mb-3 md:mb-0">
       <div className="flex flex-col items-center pb-10">
         <BiSolidUserCircle
           className={`w-24 h-24 mb-3 mt-3 rounded-full shadow-lg shadow-amber-400 ${
@@ -104,19 +104,19 @@ const LeaderboardCard = ({ name, email, points, position }) => {
         ) : null}
 
         <h5
-          className={`mb-1 text-xl font-medium ${
+          className={`mb-1 text-xl font-bold ${
             position === 1
-              ? "shadow-amber-400 text-amber-400"
+              ? "shadow-amber-400 text-black"
               : position === 2
-              ? "shadow-slate-400 text-slate-400"
+              ? "shadow-slate-400 text-black"
               : position === 3
-              ? "shadow-orange-800 text-orange-800"
+              ? "shadow-orange-800 text-black"
               : null
           }`}
         >
           {name}
         </h5>
-        <span className="text-sm text-white">{email}</span>
+        <span className="text-sm text-[#909090] font-bold">{email}</span>
         <div className="flex mt-4 text-center">
           <p
             className={`text-xl w-36 font-bold ${
@@ -130,7 +130,7 @@ const LeaderboardCard = ({ name, email, points, position }) => {
             }`}
           >
             {points} <br />
-            <span className="font-normal text-white">Points</span>
+            <span className="text-black font-bold">Points</span>
           </p>
         </div>
       </div>

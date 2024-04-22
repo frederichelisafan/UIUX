@@ -72,7 +72,7 @@ const Quiz = () => {
                     <div>
                       <button
                         onClick={() => letsPlay(SOAL_QUIZ[soal].name)}
-                        className="text-sm px-3 mt-8 rounded mx-auto bg-white text-[#523889]"
+                        className="text-sm px-3 mt-8 rounded mx-auto hover:bg-slate-200 bg-white text-[#523889]"
                       >
                         Start Quiz!
                       </button>

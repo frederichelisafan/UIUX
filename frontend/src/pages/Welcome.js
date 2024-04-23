@@ -19,9 +19,14 @@ const Welcome = () => {
           pengguna (UI) dan pengalaman pengguna (UX) melalui serangkaian materi
           pembelajaran dan quiz. Aplikasi ini bertujuan untuk memberikan
           pemahaman mendalam tentang konsep-konsep desain UI/UX .
+          {/* UI/UX learning websites are designed digital platforms
+          to help users understand the principles of interface design
+          user (UI) and user experience (UX) through a series of materials
+          learning and quizzes. This application aims to provide
+          Deep understanding of UI/UX design concepts. */}
         </p>
         <button className="bg-primary hover:bg-[#6747ab] mx-auto rounded-3xl mb-14 mt-4">
-          Ayo Belajar
+          Let's learn
         </button>
       </div>
     </div>

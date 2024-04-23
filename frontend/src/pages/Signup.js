@@ -43,7 +43,7 @@ const Signup = () => {
 
   return (
     <div className="flex grow flex-col justify-center px-6 lg:px-8 bg-zinc-950 signup-bg">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-24">
         <p className="text-2xl font-bold text-white text-center">SIGN UP</p>
         <h2 className="text-center text-lg font-bold leading-9 tracking-tight text-gray-900">
           <span className="text-[#FFAEF2] font-bold">
@@ -54,7 +54,12 @@ const Signup = () => {
       </div>
 
       <div className="xl:ml-32 sm:ml-0 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSubmit} className="space-y-6" action="#" method="POST">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6"
+          action="#"
+          method="POST"
+        >
           {REGISTER_FORMS.map((item) => (
             <div key={item.name}>
               <label

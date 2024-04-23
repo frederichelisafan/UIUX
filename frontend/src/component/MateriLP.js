@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { PATH } from "../helpers/path";
+import { Link } from "react-router-dom";
 
 const MateriLP = () => {
   const [showCard] = useState("all");
@@ -102,9 +104,12 @@ const PortfolioCard = ({ showCard, category, ImageHref, title, desc }) => {
               {category}
             </span>
             <h3 className="text-primary mb-5 text-xl font-bold">{title}</h3>
-            <a className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-md border  border-[#D01FB3] dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition no-underline hover:text-white text-[#D01FB3]">
+            <Link
+              to={"/" + PATH.REGISTER}
+              className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-md border  border-[#D01FB3] dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition no-underline hover:text-white text-[#D01FB3]"
+            >
               {desc}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

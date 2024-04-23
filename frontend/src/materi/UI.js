@@ -24,7 +24,7 @@ function UI() {
 
             <div className="math font-raleway grid">
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Pengertian & Komponen Utama UI")}
               >
                 <span className="text-start">
@@ -34,13 +34,13 @@ function UI() {
               </button>
 
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Buttons & Input Fields")}
               >
                 <span className="text-start">Buttons & Input Fields</span>
               </button>
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Dropdown Menu & Radio Buttons")}
               >
                 <span className="text-start">
@@ -48,19 +48,19 @@ function UI() {
                 </span>
               </button>
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Lists & Icons")}
               >
                 <span className="text-start">Lists & Icons</span>
               </button>
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Navigation Bar & Cards")}
               >
                 <span className="text-start">Navigation Bar & Cards</span>
               </button>
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Alerts & Checkboxes")}
               >
                 <span className="text-start">Alerts & Checkboxes</span>

@@ -27,7 +27,6 @@ function UserInterface() {
 
   return (
     <MateriContainer>
-
       <div className="flex justify-center">
         <div className="flex shrink-0 gap-4">
           <div className="container">
@@ -38,7 +37,7 @@ function UserInterface() {
 
             <div className="math font-raleway grid">
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Pengertian & Komponen Utama UX")}
               >
                 <span className="text-start">
@@ -48,7 +47,7 @@ function UserInterface() {
               </button>
 
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Pengertian & Metode UX Research")}
               >
                 <span className="text-start">
@@ -56,13 +55,13 @@ function UserInterface() {
                 </span>
               </button>
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() => showLesson("Proses UX Research")}
               >
                 <span className="text-start">Proses UX Research</span>
               </button>
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() =>
                   showLesson("Manfaat dan Implementasi UX Research")
                 }
@@ -77,6 +76,7 @@ function UserInterface() {
 
         <div class="w-full">
           <h1 className="font-raleway mt-9 mb-3">Choose and Learn with Fun</h1>
+
           {lessonToShow === "Pengertian & Metode UX Research" && (
             <div>
               <h4>**Pengantar tentang UX Research**</h4>

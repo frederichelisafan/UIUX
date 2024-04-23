@@ -22,7 +22,7 @@ function ClearFeedback() {
 
             <div className="math font-raleway grid">
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() =>
                   showLesson("Pengertian & Manfaat Clear Feedback")
                 }
@@ -34,7 +34,7 @@ function ClearFeedback() {
               </button>
 
               <button
-                className="border bg-transparent text-black grid"
+                className="border bg-transparent text-black grid hover:bg-slate-100 focus:bg-primary focus:text-white"
                 onClick={() =>
                   showLesson("Penerapan & Prinsip Desain Clear Feedback")
                 }

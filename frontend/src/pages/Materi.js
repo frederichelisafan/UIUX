@@ -24,8 +24,8 @@ const NavbarMain = () => {
   return (
     <>
       <p className="font-raleway text-4xl mt-24 font-bold text-[#523889] text-center">
-        <span className="text-[#B50097]">Ilmu adalah Kunci,</span> Ayo Mulai
-        Petualanganmu!
+        <span className="text-[#B50097]">Let's embark on the</span> journey of
+        learning!
       </p>
       <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-0">
         {SOAL_NAMES.map((soal) => (

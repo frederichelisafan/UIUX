@@ -28,7 +28,7 @@ const Leaderboard = () => {
   if (!allUsers) {
     return (
       <>
-        <div className="grow">loading...</div>
+        <div className="grow text-center">loading...</div>
       </>
     );
   }

@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
     <div className="bg-[#443091] z-30">
-      <div className="flex flex-col justify-between pt-5 pb-10 border-t border-white sm:flex-row">
-        <p className="text-white ml-10 text-1xl mx-auto">
+      <div className="flex flex-col justify-between pt-5 pb-10 border-t border-white md:flex-row lg:flex-row">
+        <p className="text-white ml-10 text-1xl">
           Frederich Elisafan © Copyright 2024
         </p>
         <div className="flex items-center space-x-4 sm:mt-0 mr-10 mx-auto">

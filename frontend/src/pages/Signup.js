@@ -5,6 +5,7 @@ import FORMS, { REGISTER_FORMS } from "../helpers/forms";
 import { register } from "../service/auth";
 import useAuth from "../store/useAuth";
 import { PATH } from "../helpers/path";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -102,12 +103,12 @@ const Signup = () => {
 
         <p className="mt-4 text-center text-sm text-white font-normal">
           Sudah punya akun?
-          <a
-            href="/"
+          <Link
+            to={"/" + PATH.LOGIN}
             className="font-bold leading-6 text-white hover:text-indigo-500 no-underline ml-1"
           >
             Masuk Disini
-          </a>
+          </Link>
         </p>
       </div>
       {/* <img

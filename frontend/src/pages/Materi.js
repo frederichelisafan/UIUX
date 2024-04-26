@@ -27,7 +27,7 @@ const NavbarMain = () => {
         <span className="text-[#B50097]">Let's embark on the</span> journey of
         learning!
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-0">
         {SOAL_NAMES.map((soal) => (
           <div class="e-card playing">
             <div class="image"></div>

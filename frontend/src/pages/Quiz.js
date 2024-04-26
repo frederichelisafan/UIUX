@@ -25,13 +25,25 @@ const Quiz = () => {
   return (
     <div className="mt-24">
       <div className="">
-        <p className=" text-[#523889] text-4xl text-center font-bold mb-3">
+        <p className=" text-[#523889] text-4xl text-center font-bold mb-8">
           <span className="text-[#B50097]">Test Your Knowledge:</span> Join Our
           Exciting Quiz Challenge!
         </p>
-        <h4 className="text-[#523889] text-center mb-5 text-2xl">
-          You'll have 15 second to answer each questions.
-        </h4>
+        <div className="text-center">
+          <h2 class="mb-2 text-lg font-semibold text-gray-900">Rules:</h2>
+          <ul class="max-w-md space-y-1 text-[#523889] list-disc list-inside mx-auto">
+            <li>
+              If you score <span className="font-bold">above 7</span>, you will{" "}
+              <span className="font-bold">receive badges</span> for the quizzes
+              that have been completed.
+            </li>
+            <li>
+              You'll have <span className="font-bold">15 second</span> to answer
+              each questions.
+            </li>
+          </ul>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-0">
           {SOAL_NAMES.map((soal, index) => {
             return (

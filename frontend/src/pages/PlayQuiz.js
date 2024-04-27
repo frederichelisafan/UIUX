@@ -181,13 +181,13 @@ const PlayQuiz = () => {
             </h3>
             <div className="flex items-center justify-center py-1 mt-8">
               <button
-                className="px-3 mx-2 text-blue-400 hover:text-blue-300"
+                className="px-3 mx-2 text-white hover:bg-blue-700"
                 onClick={handleBackHome}
               >
                 Back To Home
               </button>
               <button
-                className="px-3 mx-2 text-blue-400 hover:text-blue-300"
+                className="px-3 mx-2 text-white hover:bg-blue-700"
                 onClick={handlePlayAgain}
               >
                 Play Again

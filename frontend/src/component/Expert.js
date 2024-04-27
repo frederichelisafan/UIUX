@@ -24,8 +24,9 @@ const Expert = () => {
                 </svg>
               </h2>
               <p className="text-body-color text-base dark:text-dark-6">
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                Mereka memiliki pengetahuan dan keahlian untuk merancang dan
+                mengembangkan antarmuka digital yang menarik dan mudah
+                digunakan.
               </p>
             </div>
           </div>

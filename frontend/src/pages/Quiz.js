@@ -33,9 +33,14 @@ const Quiz = () => {
           <h2 class="mb-2 text-lg font-semibold text-gray-900">Rules:</h2>
           <ul class="max-w-md space-y-1 text-[#523889] list-disc list-inside mx-auto">
             <li>
-              If you score <span className="font-bold">above 7</span>, you will{" "}
+              If you score <span className="font-bold">above 70</span>, you will{" "}
               <span className="font-bold">receive badges</span> for the quizzes
               that have been completed.
+            </li>
+            <li>
+              You can take the <span className="font-bold">next quiz</span> when
+              you have achieved a{" "}
+              <span className="font-bold">score above 70</span>.
             </li>
             <li>
               You'll have <span className="font-bold">15 second</span> to answer

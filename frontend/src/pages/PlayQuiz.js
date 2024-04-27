@@ -212,7 +212,7 @@ const PlayQuiz = () => {
                     {currentindex + 1} / {SOAL_QUIZ[questions_name].qna.length}{" "}
                   </span>
                 </h1>
-                <h4 className="text-center">
+                <h4 className="text-center text-xl">
                   {SOAL_QUIZ[questions_name].qna[currentindex].questionText}
                 </h4>
               </div>

@@ -19,8 +19,6 @@ const PlayQuiz = () => {
   const questions_name = useParams("name");
   const navigate = useNavigate();
 
-  function setGameState() {}
-
   const [counter, setCounter] = useState(15);
   const [counterFlag, setCounterFlag] = useState(false);
   const userPoint = useAuth((state) => state.user.points);
@@ -32,10 +30,6 @@ const PlayQuiz = () => {
       counter > 0 &&
       !counterFlag &&
       setInterval(() => setCounter(counter - 1), 1000);
-
-    if (counter === 0) {
-      setGameState("gameOver");
-    }
 
     if (counterFlag) {
       return () => clearInterval(timer);

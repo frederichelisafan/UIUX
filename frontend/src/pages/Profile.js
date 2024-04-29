@@ -6,15 +6,15 @@ import convertNumber from "../helpers/convert-number";
 
 const Profile = () => {
   const { user } = useAuth((state) => state);
-  const badge = Object.values(SOAL_QUIZ).filter(
-    (val) => user.points[val.name] >= CONSTANTS.MINIMUM_POINTS
-  );
+  const badge = Object.values(SOAL_QUIZ)
+    .filter((val) => user.points[val.name] >= CONSTANTS.MINIMUM_POINTS)
+    .map((soal) => soal.name);
 
   const totalPoints = convertNumber(
     Object.values(user.points).reduce((prev, curr) => prev + curr)
   );
 
-  // console.log(badge);
+  console.log(badge);
 
   return (
     <>
@@ -49,20 +49,16 @@ const Profile = () => {
           {/* Achievement badge */}
           <div className="text-center mt-10">
             <p className="text-xl">Achievement Badge</p>
-            {badge.length > 0 ? (
-              <div className="flex justify-center items-center gap-4 flex-wrap">
-                {badge.map((item) => (
-                  <img
-                    key={item.name}
-                    src={item.badge}
-                    alt={`badge-${item.label.replaceAll(" ", "-")}`}
-                    className="w-36"
-                  />
-                ))}
-              </div>
-            ) : (
-              <p className="text-purple-500 font-bold">Not Available</p>
-            )}
+            <div className="flex justify-center items-center gap-4 flex-wrap">
+              {Object.values(SOAL_QUIZ).map((item) => (
+                <img
+                  key={item.name}
+                  src={item.badge}
+                  alt={`badge-${item.label.replaceAll(" ", "-")}`}
+                  className={`w-36 ${!badge.includes(item.name) && "grayscale"}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

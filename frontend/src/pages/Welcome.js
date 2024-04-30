@@ -1,5 +1,7 @@
 import React from "react";
 import useAuth from "../store/useAuth";
+import { PATH } from "../helpers/path";
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
   const { username } = useAuth((state) => state.user);
@@ -25,9 +27,11 @@ const Welcome = () => {
           learning and quizzes. This application aims to provide
           Deep understanding of UI/UX design concepts. */}
         </p>
-        <button className="bg-primary hover:bg-[#6747ab] mx-auto rounded-3xl mb-14 mt-4">
-          Let's learn
-        </button>
+        <Link to={"/" + PATH.QUIZ}>
+          <button className="bg-primary hover:bg-[#6747ab] mx-auto rounded-3xl mb-14 mt-4">
+            Let's learn
+          </button>
+        </Link>
       </div>
     </div>
   );

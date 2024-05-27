@@ -68,7 +68,7 @@ function App() {
           />
         </Route>
 
-        {/* <Route path="*" Component={NotFound} /> */}
+        <Route path="*" Component={NotFound} />
       </Routes>
     </>
   );

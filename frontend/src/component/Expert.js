@@ -56,7 +56,7 @@ const Expert = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h5 className="mb-2 text-lg font-bold">Galuh Noor Akbar</h5>
+                  <h5 className="mb-2 text-lg font-bold">G**** N*** A****</h5>
                   <h6 className="mb-4 font-medium text-primary dark:text-primary-400">
                     UI/UX Designer
                   </h6>
@@ -122,7 +122,7 @@ const Expert = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h5 className="mb-2 text-lg font-bold">Dimas Ardirosatama</h5>
+                  <h5 className="mb-2 text-lg font-bold">D**** A***********</h5>
                   <h6 className="mb-4 font-medium text-primary dark:text-primary-400">
                     UI/UX Designer
                   </h6>
@@ -189,7 +189,7 @@ const Expert = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h5 className="mb-2 text-lg font-bold">Risa Noor</h5>
+                  <h5 className="mb-2 text-lg font-bold">R*** N***</h5>
                   <h6 className="mb-4 font-medium text-primary dark:text-primary-400">
                     User Researcher
                   </h6>
